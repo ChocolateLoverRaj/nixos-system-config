@@ -10,7 +10,6 @@
         [keyd virtual keyboard]
         MatchName=keyd virtual keyboard
         AttrKeyboardIntegration=internal
-        ModelTabletModeNoSuspend=1
       '';
     };
   };
