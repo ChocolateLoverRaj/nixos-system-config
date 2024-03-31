@@ -9,22 +9,22 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./chromebook-audio.nix
-      ./keyd.nix
-      ./virt-manager.nix
-      ./flatpak.nix
-      ./bootloader.nix
-      ./users.nix
-      ./zram.nix
-      ./steam.nix
-      ./de.nix
-      ./sound.nix
-      ./printing.nix
       ./bluetooth.nix
-      ./podman.nix
       ./networking.nix
       ./locale.nix
       ./time-zone.nix
+      ./bootloader.nix
+      ./users.nix
+      ./de.nix
+      ./printing.nix
+      ./keyd.nix
+      ./chromebook-audio.nix
+      ./virt-manager.nix
+      ./flatpak.nix
+      ./zram.nix
+      ./steam.nix
+      ./sound.nix
+      ./podman.nix
       ./packages.nix
     ];
 

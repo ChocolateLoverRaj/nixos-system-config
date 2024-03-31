@@ -12,8 +12,6 @@
     lf
     neofetch
     fastfetch
-    # To manage packages in home folder
-    home-manager
     # For distrobox and toolbox
     podman
     # Important for Chromebooks
