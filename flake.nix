@@ -2,7 +2,7 @@
   description = "A simple NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:alois31/nixpkgs/replacedependencies";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -12,6 +12,8 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixpkgs-fixed.url = "github:alois31/nixpkgs/replacedependencies";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {

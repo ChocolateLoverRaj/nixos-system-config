@@ -29,35 +29,18 @@ let
   };
 in
 {
-  # boot = {
-  #   extraModprobeConfig = ''
-  #     options snd-intel-dspcfg dsp_driver=3
-  #   '';
-  # };
+  boot = {
+    extraModprobeConfig = ''
+      options snd-intel-dspcfg dsp_driver=3
+    '';
+  };
 
   environment = {
-    # systemPackages = with pkgs; [
-    #   maliit-keyboard
-    #   sof-firmware
-    # ];
-    # sessionVariables.ALSA_CONFIG_UCM2 = "${adl-ucm-conf}/share/alsa/ucm2";
-    # For nixos 23.11
-    # etc = {
-    #   "wireplumber/main.lua.d/51-increase-headroom.lua".text = ''
-    #     rule = {
-    #       matches = {
-    #         {
-    #           { "node.name", "matches", "alsa_output.*" },
-    #         },
-    #       },
-    #       apply_properties = {
-    #         ["api.alsa.headroom"] = 4096,
-    #       },
-    #     }
-
-    #     table.insert(alsa_monitor.rules,rule)
-    #   '';
-    # };
+    systemPackages = with pkgs; [
+      maliit-keyboard
+      sof-firmware
+    ];
+    sessionVariables.ALSA_CONFIG_UCM2 = "${adl-ucm-conf}/share/alsa/ucm2";
   };
 
   system.replaceRuntimeDependencies = with pkgs; [
@@ -68,20 +51,20 @@ in
   ];
 
   # For nixos unstable
-  # services.pipewire.wireplumber.configPackages = [
-  #   (pkgs.writeTextDir "share/wireplumber/main.lua.d/51-increase-headroom.lua" ''
-  #     rule = {
-  #       matches = {
-  #         {
-  #           { "node.name", "matches", "alsa_output.*" },
-  #         },
-  #       },
-  #       apply_properties = {
-  #         ["api.alsa.headroom"] = 4096,
-  #       },
-  #     }
+  services.pipewire.wireplumber.configPackages = [
+    (pkgs.writeTextDir "share/wireplumber/main.lua.d/51-increase-headroom.lua" ''
+      rule = {
+        matches = {
+          {
+            { "node.name", "matches", "alsa_output.*" },
+          },
+        },
+        apply_properties = {
+          ["api.alsa.headroom"] = 4096,
+        },
+      }
 
-  #     table.insert(alsa_monitor.rules,rule)
-  #   '')
-  # ];
+      table.insert(alsa_monitor.rules,rule)
+    '')
+  ];
 }
