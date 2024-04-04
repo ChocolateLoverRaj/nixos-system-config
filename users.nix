@@ -5,11 +5,11 @@
   users.users.rajas = {
     isNormalUser = true;
     description = "Rajas";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kate
-      #  thunderbird
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "tty"
     ];
   };
 }

@@ -18,5 +18,11 @@
     podman
     # Important for Chromebooks
     (pkgs.callPackage ./cros-ectool.nix { })
+    # For new users to get started
+    firefox
+    google-chrome
+    bottles
+    kdePackages.dragon
+    vlc
   ];
 }

@@ -26,6 +26,9 @@
       ./locale.nix
       ./time-zone.nix
       ./packages.nix
+      ./external-camera.nix
+      ./ipu6.nix
+      ./ld.nix
     ];
 
   nix.settings.experimental-features = [

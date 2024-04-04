@@ -26,7 +26,15 @@
         enable = true;
       };
     };
+    # This may be needed for Chromebook fingerprint login, idk
+    fprintd.enable = true;
   };
+
+  # Custom text once Chromebook fingerprint login is done
+  # Example: https://github.com/NixOS/nixpkgs/issues/239770#issuecomment-1608589113
+  # security.pam.services.kde-fingerprint.text = ''
+  #   # Chromebook fingerprint PAM module will go here
+  # '';
   environment = {
     systemPackages = with pkgs; [
       # Needed for KDE Plasma to fully function
@@ -51,4 +59,5 @@
       enable = true;
     };
   };
+
 }
