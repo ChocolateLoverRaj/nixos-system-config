@@ -49,6 +49,13 @@
       kdePackages.kaccounts-providers
       kdePackages.kio-gdrive
       kdePackages.signond
+      # Hyprland
+      waybar
+      dunst
+      libnotify
+      kitty
+      swww
+      rofi-wayland
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -58,5 +65,6 @@
     kdeconnect = {
       enable = true;
     };
+    hyprland.enable = true;
   };
 }
