@@ -12,6 +12,9 @@
     lf
     neofetch
     fastfetch
+    bat
+    kdePackages.ksystemlog
+    gnome.gnome-logs
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
