@@ -2,22 +2,11 @@
 
 {
   services = {
-    xserver = {
-      enable = true;
-      libinput = {
-        # Enable touchpad support (enabled default in most desktopManager).
+    displayManager = {
+      sddm = {
         enable = true;
-        touchpad = {
-          naturalScrolling = true;
-          tapping = true;
-        };
-      };
-      displayManager = {
-        sddm = {
+        wayland = {
           enable = true;
-          wayland = {
-            enable = true;
-          };
         };
       };
     };
