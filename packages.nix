@@ -15,6 +15,7 @@
     bat
     kdePackages.ksystemlog
     gnome.gnome-logs
+    (callPackage /home/rajas/Documents/nixpkgs/pkgs/by-name/ta/tabby-terminal/package.nix { })
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
