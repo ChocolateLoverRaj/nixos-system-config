@@ -15,8 +15,6 @@
         enable = true;
       };
     };
-    # This may be needed for Chromebook fingerprint login, idk
-    fprintd.enable = true;
   };
 
   # Custom text once Chromebook fingerprint login is done
