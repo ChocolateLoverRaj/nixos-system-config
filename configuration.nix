@@ -30,7 +30,6 @@
       ./ipu6.nix
       ./ld.nix
       ./waydroid.nix
-      ./encrypt-home.nix
     ];
 
   nix.settings.experimental-features = [
