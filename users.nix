@@ -10,6 +10,7 @@
       "wheel"
       "dialout"
       "tty"
+      "adbusers"
     ];
   };
 }

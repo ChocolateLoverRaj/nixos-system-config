@@ -30,6 +30,7 @@
       ./ipu6.nix
       ./ld.nix
       ./waydroid.nix
+      ./adb.nix
     ];
 
   nix.settings.experimental-features = [
