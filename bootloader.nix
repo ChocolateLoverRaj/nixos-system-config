@@ -7,24 +7,30 @@ in
 {
   imports = [ lanzaboote.nixosModules.lanzaboote ];
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # For debugging and troubleshooting Secure Boot.
-    pkgs.sbctl
+    sbctl
+    # This is needed to auto-unlock LUKS with TPM 2 - https://discourse.nixos.org/t/full-disk-encryption-tpm2/29454/2
+    tpm2-tss
   ];
 
-  # Lanzaboote currently replaces the systemd-boot module.
-  # This setting is usually set to true in configuration.nix
-  # generated at installation time. So we force it to false
-  # for now.
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot = {
+    loader = {
+      # Lanzaboote currently replaces the systemd-boot module.
+      # This setting is usually set to true in configuration.nix
+      # generated at installation time. So we force it to false
+      # for now.
+      systemd-boot.enable = lib.mkForce false;
+      efi.canTouchEfiVariables = true;
+      timeout = 1;
+    };
 
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/etc/secureboot";
-  };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    timeout = 1;
+    # This is needed to auto-unlock LUKS with TPM 2 - https://discourse.nixos.org/t/full-disk-encryption-tpm2/29454/2
+    initrd.systemd.enable = true;
   };
 }
