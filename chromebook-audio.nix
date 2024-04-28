@@ -22,7 +22,7 @@ let
       mkdir -p $out/share/alsa
       cp -r alsa-ucm*/{ucm,ucm2} $out/share/alsa
       cp -r $wttsrc/common $out/share/alsa/ucm2
-      cp -r $wttsrc/adl/* $out/share/alsa/ucm2/conf.d
+      cp -r $wttsrc/cml/* $out/share/alsa/ucm2/conf.d
 
       runHook postInstall
     '';
