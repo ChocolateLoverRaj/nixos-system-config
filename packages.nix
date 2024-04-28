@@ -29,5 +29,6 @@
     bottles
     kdePackages.dragon
     vlc
+    niv
   ];
 }
