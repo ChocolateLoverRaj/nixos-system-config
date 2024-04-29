@@ -7,7 +7,7 @@
     droidcam
     scrcpy
     android-tools
-    linuxKernel.packages.linux_6_8.v4l2loopback
+    linuxKernel.packages.linux_6_6.v4l2loopback
   ];
 
   boot = {
