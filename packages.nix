@@ -17,6 +17,8 @@
     gnome.gnome-logs
     gparted
     kdePackages.partitionmanager
+    usbutils
+    kdePackages.isoimagewriter
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
