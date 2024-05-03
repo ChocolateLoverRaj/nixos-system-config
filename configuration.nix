@@ -31,6 +31,7 @@
       ./ld.nix
       ./waydroid.nix
       ./adb.nix
+      ./screen-sharing.nix
     ];
 
   nix.settings.experimental-features = [
