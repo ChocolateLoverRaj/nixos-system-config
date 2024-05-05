@@ -27,7 +27,7 @@
       ./time-zone.nix
       ./packages.nix
       ./external-camera.nix
-      ./ipu6.nix
+      # ./ipu6.nix
       ./ld.nix
       ./waydroid.nix
       ./adb.nix
