@@ -31,6 +31,7 @@
       wayland-utils
       pciutils
       aha
+      smartmontools
       # For logging in to Google. Doesn't work as of now (https://github.com/NixOS/nixpkgs/issues/263299)
       kdePackages.kaccounts-integration
       kdePackages.kaccounts-providers
