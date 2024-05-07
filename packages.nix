@@ -19,6 +19,7 @@
     kdePackages.partitionmanager
     usbutils
     kdePackages.isoimagewriter
+    kdePackages.kclock
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
