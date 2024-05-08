@@ -41,7 +41,8 @@
           refresh = "f2";
           zoom = "f3";
           scale = "f4";
-          print = "f5";
+          # For some reason the "print" key (with the camera icon) is sysrq
+          sysrq = "f5";
           brightnessdown = "f6";
           brightnessup = "f7";
           kbdillumtoggle = "f8";
