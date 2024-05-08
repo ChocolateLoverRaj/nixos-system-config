@@ -36,7 +36,7 @@ in
 
   # For nixos unstable
   services.pipewire.wireplumber.configPackages = [
-    (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-increase-headroom.lua" ''
+    (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-increase-headroom.conf" ''
       monitor.alsa.rules = [
         {
           matches = [
@@ -46,7 +46,7 @@ in
           ]
           actions = {
             update-props = {
-              api.alsa.headroom = 4096
+              api.alsa.headroom = 8192
             }
           }
         }
