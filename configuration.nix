@@ -32,6 +32,7 @@
       ./waydroid.nix
       ./adb.nix
       ./screen-sharing.nix
+      ./auto-stop-charging.nix
     ];
 
   nix.settings.experimental-features = [
