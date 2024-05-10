@@ -14,10 +14,12 @@ let
       };
       sourceRoot = "${src.name}/auto-stop-charging";
     };
+  ectool = (pkgs.callPackage ./cros-ectool.nix { });
 in
 {
   environment.systemPackages = with pkgs; [
     auto-stop-charging
+    ectool
   ];
   systemd.services.auto-stop-charging = {
     enable = true;
@@ -28,4 +30,7 @@ in
     };
     wantedBy = [ "multi-user.target" ];
   };
+  powerManagement.powerDownCommands = ''
+    ${ectool}/bin/ectool chargecontrol idle
+  '';
 }
