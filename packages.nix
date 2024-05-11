@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  ectool = (pkgs.callPackage ./cros-ectool.nix { });
+in
 {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -25,7 +28,7 @@
     # For distrobox and toolbox
     podman
     # Important for Chromebooks
-    (pkgs.callPackage ./cros-ectool.nix { })
+    ectool
     # For new users to get started
     firefox
     google-chrome
