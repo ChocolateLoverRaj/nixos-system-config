@@ -23,6 +23,7 @@ in
     usbutils
     kdePackages.isoimagewriter
     kdePackages.kclock
+    niv
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
@@ -35,6 +36,5 @@ in
     bottles
     kdePackages.dragon
     vlc
-    niv
   ];
 }
