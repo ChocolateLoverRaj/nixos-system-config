@@ -29,6 +29,7 @@ in
       ExecStart = "${auto-stop-charging}/bin/auto-stop-charging";
     };
     wantedBy = [ "multi-user.target" ];
+    path = [ ectool ];
   };
   powerManagement.powerDownCommands = ''
     ${ectool}/bin/ectool chargecontrol idle
