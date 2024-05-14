@@ -18,7 +18,6 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    auto-stop-charging
     ectool
   ];
   systemd.services.auto-stop-charging = {
