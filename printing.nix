@@ -43,6 +43,12 @@
           };
         })
       ];
+      # Share printers - https://nixos.wiki/wiki/Printing#Printer_sharing
+      listenAddresses = [ "*:631" ];
+      allowFrom = [ "all" ];
+      browsing = true;
+      defaultShared = true;
+      openFirewall = true;
     };
 
     # This is needed to discover printers in the network
@@ -50,6 +56,11 @@
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
+      # Share printers - https://nixos.wiki/wiki/Printing#Printer_sharing
+      publish = {
+        enable = true;
+        userServices = true;
+      };
     };
   };
 }
