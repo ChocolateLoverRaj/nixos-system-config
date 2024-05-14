@@ -17,9 +17,6 @@ let
   };
 in
 {
-  environment.systemPackages = with pkgs; [
-    ectool
-  ];
   systemd.services.auto-stop-charging = {
     enable = true;
     description = "Stop charging when the battery reaches the threshold";
@@ -30,7 +27,4 @@ in
     wantedBy = [ "multi-user.target" ];
     path = [ ectool ];
   };
-  powerManagement.powerDownCommands = ''
-    ${ectool}/bin/ectool chargecontrol idle
-  '';
 }

@@ -33,6 +33,7 @@
       ./adb.nix
       ./screen-sharing.nix
       ./auto-stop-charging.nix
+      ./stop-charging-before-suspend.nix
     ];
 
   nix.settings.experimental-features = [
