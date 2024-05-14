@@ -34,6 +34,7 @@
       ./screen-sharing.nix
       ./auto-stop-charging.nix
       ./stop-charging-before-suspend.nix
+      ./nix-serve.nix
     ];
 
   nix.settings.experimental-features = [
