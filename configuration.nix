@@ -35,6 +35,7 @@
       ./auto-stop-charging.nix
       ./stop-charging-before-suspend.nix
       ./nix-serve.nix
+      ./kernel.nix
     ];
 
   nix.settings.experimental-features = [
