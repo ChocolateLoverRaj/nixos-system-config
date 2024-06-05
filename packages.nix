@@ -24,6 +24,7 @@ in
     kdePackages.isoimagewriter
     kdePackages.kclock
     niv
+    kdiskmark
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
