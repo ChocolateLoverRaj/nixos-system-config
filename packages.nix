@@ -25,6 +25,7 @@ in
     kdePackages.kclock
     niv
     kdiskmark
+    unrar-wrapper
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
