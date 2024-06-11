@@ -9,11 +9,8 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../chromebook-audio.nix
-      ../../keyd.nix
       ../../virt-manager.nix
-      ../../flatpak.nix
-      ../../unsecure-boot.nix
+      ../../secure-boot.nix
       ../../users.nix
       ../../zram.nix
       ../../steam.nix
@@ -27,11 +24,8 @@
       ../../time-zone.nix
       ../../packages.nix
       ../../external-camera.nix
-      ../../waydroid.nix
       ../../adb.nix
       ../../screen-sharing.nix
-      ../../auto-stop-charging.nix
-      ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
       ../../kernel.nix
     ];
@@ -52,5 +46,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  networking.hostName = "jinlon";
+  networking.hostName = "gaming-computer";
 }
