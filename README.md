@@ -1,12 +1,7 @@
 ## Set up
-Symlink the host's configuration
+Clone this repo into `/etc/nixos`. You can change the permissions of `/etc/nixos` to your username to make it nicer to edit.
+Apply configuration based on the host name. For example, with Jinlon:
 ```bash
-ln -s hosts/jinlon/configuration.nix configuration.nix
+sudo nixos-rebuild switch --flake .#jinlon
 ```
-
-Switch to nixos-unstable (optional)
-
-Switch
-```bash
-sudo nixos-rebuild switch --upgrade
-```
+Note that Jinlon needs `--impure` when running `nixos-rebuild`, because it uses `replaceRuntimeDependencies` for Chromebook audio.
