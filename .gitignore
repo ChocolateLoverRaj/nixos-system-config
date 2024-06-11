@@ -1,2 +1,4 @@
 # I leave hardware configuration as it is
 hardware-configuration.nix
+# This should be symlinked
+/configuration.nix
