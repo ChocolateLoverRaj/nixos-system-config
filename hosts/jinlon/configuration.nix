@@ -34,6 +34,7 @@
       ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
       ../../kernel.nix
+      ../../rust-fp.nix
     ];
 
   nix.settings.experimental-features = [
