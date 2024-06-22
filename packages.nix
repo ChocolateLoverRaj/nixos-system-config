@@ -34,9 +34,12 @@ in
     # Important for Chromebooks
     ectool
     # For new users to get started
+    # Give new users a choice of the two popular open source browsers
     firefox
-    google-chrome
+    chromium
+    # Give new users the ability to run windows software
     bottles
+    # Give new users 2! video players
     kdePackages.dragon
     vlc
   ];
