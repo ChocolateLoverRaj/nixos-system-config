@@ -4,8 +4,8 @@ let
   rust-fp = pkgs.fetchFromGitHub {
     owner = "ChocolateLoverRaj";
     repo = "cros-fp-pam";
-    rev = "770e9483611e17f8ddda3401d795cb6ed4e70196";
-    hash = "sha256-6slwc40tRr99VHC2rOq0YXlw+18YcST13blQ8ntaVDw=";
+    rev = "b38c1b93a0f1015629a7c8f77bea77ef7e9ac76a";
+    hash = "sha256-NLK2ImU7Bn6hjMFwchCDp79+QumvLwWUMp48xXjU0bE=";
   };
   rust-fp-dbus-interface-config = (pkgs.stdenv.mkDerivation rec {
     name = "rust-fp-pam";
