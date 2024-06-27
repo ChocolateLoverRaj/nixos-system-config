@@ -13,4 +13,9 @@
       "adbusers"
     ];
   };
+
+  users.users.test = {
+    isNormalUser = true;
+    description = "Test";
+  };
 }
