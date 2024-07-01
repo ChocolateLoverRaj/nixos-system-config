@@ -1,12 +1,7 @@
 # file: configuration.nix
 { pkgs, lib, ... }:
-let
-  sources = import ./nix/sources.nix;
-  lanzaboote = import sources.lanzaboote;
-in
-{
-  imports = [ lanzaboote.nixosModules.lanzaboote ];
 
+{
   environment.systemPackages = with pkgs; [
     # For debugging and troubleshooting Secure Boot.
     sbctl

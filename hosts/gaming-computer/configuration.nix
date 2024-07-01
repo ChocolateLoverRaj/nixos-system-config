@@ -10,7 +10,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../virt-manager.nix
-      ../../unsecure-boot.nix
+      ../../secure-boot.nix
       ../../users.nix
       ../../zram.nix
       ../../tv-gaming.nix
