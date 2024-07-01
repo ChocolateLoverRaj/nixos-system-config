@@ -2,20 +2,31 @@
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rajas = {
-    isNormalUser = true;
-    description = "Rajas";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "dialout"
-      "tty"
-      "adbusers"
-    ];
-  };
+  users.users = {
+    rajas = {
+      isNormalUser = true;
+      description = "Rajas";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "dialout"
+        "tty"
+        "adbusers"
+        "input"
+      ];
+    };
 
-  users.users.test = {
-    isNormalUser = true;
-    description = "Test";
+    rujuta = {
+      isNormalUser = true;
+      description = "Rujuta";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "dialout"
+        "tty"
+        "adbusers"
+        "input"
+      ];
+    };
   };
 }

@@ -6,8 +6,9 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
   };
-  outputs = { self, nixpkgs, nixos-cosmic, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-cosmic, jovian, ... }@inputs: {
     nixosConfigurations = {
       "jinlon" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -25,6 +26,7 @@
       "gaming-computer" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          jovian.nixosModules.default
           ./hosts/gaming-computer/configuration.nix
         ];
       };

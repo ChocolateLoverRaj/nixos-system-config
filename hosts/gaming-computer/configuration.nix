@@ -10,11 +10,10 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../virt-manager.nix
-      ../../secure-boot.nix
+      ../../unsecure-boot.nix
       ../../users.nix
       ../../zram.nix
-      ../../steam.nix
-      ../../de.nix
+      ../../tv-gaming.nix
       ../../sound.nix
       ../../printing.nix
       ../../bluetooth.nix
@@ -28,6 +27,9 @@
       ../../screen-sharing.nix
       ../../nix-serve.nix
       ../../kernel.nix
+      ../../ssh-server.nix
+      ../../ld.nix
+      ../../docker.nix
     ];
 
   nix.settings.experimental-features = [
@@ -41,6 +43,8 @@
     "steam"
     "steam-original"
     "steam-run"
+    "steam-jupiter-original"
+    "steamdeck-hw-theme"
   ];
 
   # This value determines the NixOS release from which the default
