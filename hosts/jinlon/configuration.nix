@@ -34,6 +34,8 @@
       ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
       ../../kernel.nix
+      ../../rust-fp.nix
+      ../../ssh-fs.nix
     ];
 
   nix.settings.experimental-features = [
@@ -41,8 +43,13 @@
     "flakes"
   ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # Allow some unfree packages
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "vevor-cups"
+    "steam"
+    "steam-original"
+    "steam-run"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
