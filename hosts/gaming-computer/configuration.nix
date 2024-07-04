@@ -30,6 +30,8 @@
       ../../ssh-server.nix
       ../../ld.nix
       ../../docker.nix
+      ../../cooler-control.nix
+      ../../mosh.nix
     ];
 
   nix.settings.experimental-features = [
