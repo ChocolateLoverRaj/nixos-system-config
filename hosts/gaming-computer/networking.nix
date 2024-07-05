@@ -1,36 +1,21 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
-let
-  allowedPorts = [ 80 443 ];
-  allowedPortRanges = [
-    {
-      from = 1025;
-      to = 2024;
-    }
-  ];
-in
 {
   networking.hostName = "gaming-computer";
   networking.networkmanager.enable = true;
-  networking.firewall = {
+  services.cloudflared = {
     enable = true;
-    allowedTCPPorts = allowedPorts;
-    allowedUDPPorts = allowedPorts;
-    allowedTCPPortRanges = allowedPortRanges;
-    allowedUDPPortRanges = allowedPortRanges;
-  };
-  services.caddy = {
-    enable = true;
-    virtualHosts = {
-      "c.whats4meal.com".extraConfig = ''
-        reverse_proxy 127.0.0.1:8080
-      '';
-      "chocolateloverraj.ddns.net".extraConfig = ''
-        file_server
-      '';
-      "chocolateloverraj.ddns.net:1025".extraConfig = ''
-        reverse_proxy 127.0.0.1:8080
-      '';
+    user = "root";
+    tunnels = {
+      "7b43f4c7-08fb-4a62-8849-e2c07d39d058.json" = {
+        credentialsFile = "/root/.cloudflared/7b43f4c7-08fb-4a62-8849-e2c07d39d058.json";
+        ingress = {
+          "code.whats4meal.com" = "http://localhost:8080";
+          "ssh.whats4meal.com" = "ssh://localhost:22";
+        };
+        default = "http_status:404";
+      };
     };
   };
+  environment.systemPackages = with pkgs; [ cloudflared ];
 }
