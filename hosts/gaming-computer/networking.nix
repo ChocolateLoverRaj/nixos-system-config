@@ -25,17 +25,11 @@ in
       "c.whats4meal.com".extraConfig = ''
         reverse_proxy 127.0.0.1:8080
       '';
-      "g.whats4meal.com".extraConfig = ''
-        reverse_proxy 127.0.0.1:11987
-      '';
       "chocolateloverraj.ddns.net".extraConfig = ''
         file_server
       '';
       "chocolateloverraj.ddns.net:1025".extraConfig = ''
         reverse_proxy 127.0.0.1:8080
-      '';
-      "chocolateloverraj.ddns.net:1026".extraConfig = ''
-        reverse_proxy 127.0.0.1:11987
       '';
     };
   };
