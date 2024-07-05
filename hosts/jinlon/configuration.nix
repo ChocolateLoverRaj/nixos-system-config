@@ -34,8 +34,7 @@
       ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
       ../../kernel.nix
-      ../../rust-fp.nix
-      ../../ssh-fs.nix
+      ../../access-gaming-computer.nix
     ];
 
   nix.settings.experimental-features = [

@@ -14,4 +14,19 @@
     ];
   };
   boot.supportedFilesystems."fuse.sshfs" = true;
+  nix = {
+    buildMachines = [
+      {
+        hostName = "ssh.whats4meal.com";
+        system = "x86_64-linux";
+        maxJobs = 100;
+        speedFactor = 4;
+        protocol = "ssh-ng";
+      }
+    ];
+    distributedBuilds = true;
+  };
+  nix.extraOptions = ''
+    builders-use-substitutes = true
+  '';
 }

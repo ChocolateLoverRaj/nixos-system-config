@@ -13,8 +13,9 @@
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-fp.url = "github:ChocolateLoverRaj/rust-fp";
   };
-  outputs = { self, nixpkgs, nixos-cosmic, jovian, lanzaboote, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-cosmic, jovian, lanzaboote, rust-fp, ... }@inputs: {
     nixosConfigurations = {
       "jinlon" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -27,6 +28,7 @@
             };
           }
           nixos-cosmic.nixosModules.default
+          rust-fp.nixosModules.default
         ];
       };
       "gaming-computer" = nixpkgs.lib.nixosSystem {
