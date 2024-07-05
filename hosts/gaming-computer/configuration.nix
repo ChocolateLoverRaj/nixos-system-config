@@ -18,7 +18,7 @@
       ../../printing.nix
       ../../bluetooth.nix
       ../../podman.nix
-      ../../networking.nix
+      ./networking.nix
       ../../locale.nix
       ../../time-zone.nix
       ../../packages.nix
@@ -56,6 +56,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-  networking.hostName = "gaming-computer";
 }
