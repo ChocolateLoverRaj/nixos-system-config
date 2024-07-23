@@ -34,7 +34,9 @@
       ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
       ../../kernel.nix
-      ../../access-gaming-computer.nix
+      ../../access-remote-machines.nix
+      ../../fonts.nix
+      ../../docker.nix
     ];
 
   nix.settings.experimental-features = [
