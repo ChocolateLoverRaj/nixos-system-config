@@ -9,7 +9,6 @@ let
 in
 {
   networking.hostName = "gaming-computer";
-  networking.networkmanager.enable = true;
   services.caddy = {
     enable = true;
     virtualHosts = {

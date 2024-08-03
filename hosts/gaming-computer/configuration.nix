@@ -18,6 +18,7 @@
       ../../printing.nix
       ../../bluetooth.nix
       ../../podman.nix
+      ../../common-networking.nix
       ./networking.nix
       ../../locale.nix
       ../../time-zone.nix
