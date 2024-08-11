@@ -33,21 +33,12 @@
       ../../mosh.nix
       ./manage-tv.nix
       ./heroic.nix
+      ../../unfree-packages.nix
     ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-  ];
-
-  # Allow some unfree packages
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "vevor-cups"
-    "steam"
-    "steam-original"
-    "steam-run"
-    "steam-jupiter-original"
-    "steamdeck-hw-theme"
   ];
 
   # This value determines the NixOS release from which the default
