@@ -6,7 +6,7 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
+    jovian.url = "github:ChocolateLoverRaj/Jovian-NixOS";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
 
@@ -23,8 +23,8 @@
           ./hosts/jinlon/configuration.nix
           {
             nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+              substituters = [ "https://cosmic.cachix.org/" "https://nix-gaming.cachix.org" ];
+              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4=" ];
             };
           }
           nixos-cosmic.nixosModules.default
@@ -33,6 +33,7 @@
       };
       "gaming-computer" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           jovian.nixosModules.default
           lanzaboote.nixosModules.lanzaboote

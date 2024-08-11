@@ -13,7 +13,7 @@
       ../../secure-boot.nix
       ../../users.nix
       ../../zram.nix
-      ../../tv-gaming.nix
+      ./tv-gaming.nix
       ../../sound.nix
       ../../printing.nix
       ../../bluetooth.nix
@@ -31,6 +31,8 @@
       ../../ld.nix
       ../../docker.nix
       ../../mosh.nix
+      ./manage-tv.nix
+      ./heroic.nix
     ];
 
   nix.settings.experimental-features = [

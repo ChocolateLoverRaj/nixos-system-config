@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services = {
@@ -27,6 +27,14 @@
     };
     steamos = {
       useSteamOSConfig = false;
+      enableBluetoothConfig = true;
+      enableMesaPatches = true;
+      enableSysctlConfig = true;
+    };
+    decky-loader = {
+      enable = true;
+      extraPackages = with pkgs; [ udev ];
+      enableFHSEnvironment = true;
     };
   };
 }

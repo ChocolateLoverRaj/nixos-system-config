@@ -3,7 +3,7 @@
 let
   auth = ''
     basic_auth {
-      rajas $2a$12$9HNY1js/crUU6IbbXDm6Jegf/OrnaG1Y6YC0rF34lDt6vM4gTdRfi
+      rajas $2a$12$g4sHzlwKSwW7.6Q5bzACme6.dGqBHHt8fkloU43rsZZXRHicFfR8S
     }
   '';
 in
@@ -17,8 +17,13 @@ in
         ${auth}
         reverse_proxy 127.0.0.1:11987
       '';
+      ":1026".extraConfig = ''
+        ${auth}
+        reverse_proxy 127.0.0.1:8081
+      '';
     };
   };
+  networking.firewall.enable = true;
   services.cloudflared = {
     enable = true;
     user = "root";
@@ -26,7 +31,7 @@ in
       "7b43f4c7-08fb-4a62-8849-e2c07d39d058.json" = {
         credentialsFile = "/root/.cloudflared/7b43f4c7-08fb-4a62-8849-e2c07d39d058.json";
         ingress = {
-          "code.whats4meal.com" = "http://localhost:8080";
+          "code.whats4meal.com" = "http://localhost:1026";
           "ssh.whats4meal.com" = "ssh://localhost:22";
           "gaming-computer.whats4meal.com" = "http://localhost:1025";
         };
@@ -34,6 +39,7 @@ in
       };
     };
   };
+
   environment.systemPackages = with pkgs; [ cloudflared ];
   programs.coolercontrol.enable = true;
 }
