@@ -61,22 +61,4 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   networking.hostName = "jinlon";
-
-  services.logind.extraConfig = "InhibitDelayMaxSec=60";
-  systemd.services.test =
-    let
-      testPackage = with pkgs; (rustPlatform.buildRustPackage rec {
-        pname = "test-package";
-        version = "0.1.0";
-        src = /home/rajas/Documents/rust-esp32c3-examples/smart-power-button;
-        buildAndTestSubdir = "computer";
-        cargoHash = "sha256-jtBw4ahSl88L0iuCXxQgZVm1EcboWRJMNtjxLVTtzts=";
-      });
-    in
-    {
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        Exec = "${testPackage}/bin/simulate2";
-      };
-    };
 }
