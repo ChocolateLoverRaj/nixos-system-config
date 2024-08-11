@@ -14,8 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rust-fp.url = "github:ChocolateLoverRaj/rust-fp";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
-  outputs = { self, nixpkgs, nixos-cosmic, jovian, lanzaboote, rust-fp, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-cosmic, jovian, lanzaboote, rust-fp, nixos-hardware, ... }@inputs: {
     nixosConfigurations = {
       "jinlon" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -23,8 +24,8 @@
           ./hosts/jinlon/configuration.nix
           {
             nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" "https://nix-gaming.cachix.org" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4=" ];
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
             };
           }
           nixos-cosmic.nixosModules.default
@@ -33,11 +34,17 @@
       };
       "gaming-computer" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
         modules = [
           jovian.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
           ./hosts/gaming-computer/configuration.nix
+        ];
+      };
+      "raspberry-pi" = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/raspberry-pi/configuration.nix
+          nixos-hardware.nixosModules.raspberry-pi-3
         ];
       };
     };

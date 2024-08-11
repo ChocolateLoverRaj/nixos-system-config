@@ -34,7 +34,7 @@
       ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
       ../../kernel.nix
-      ../../access-remote-machines.nix
+      ./access-remote-machines.nix
       ../../fonts.nix
       ../../docker.nix
     ];

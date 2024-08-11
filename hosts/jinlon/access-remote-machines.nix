@@ -14,7 +14,7 @@
     ];
   };
   fileSystems."/mnt/raspberry-pi" = {
-    device = "rajas@192.168.0.4:/";
+    device = "rajas@raspberry-pi:/";
     fsType = "fuse.sshfs";
     options = [
       "identityfile=/root/.ssh/id_ed25519"
