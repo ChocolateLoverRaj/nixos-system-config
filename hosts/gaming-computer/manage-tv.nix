@@ -9,7 +9,7 @@ let
       owner = "ChocolateLoverRaj";
       repo = "rust-esp32c3-examples";
       rev = "main";
-      hash = "sha256-3tNiveQfyveeVkuBBA0LYe0KO9m9GN28IGmIphyVxFs=";
+      hash = "sha256-ztyWDUbaLGN2zmThkJIFtTKGfKXPLOiCXrwv72VgQyg=";
     };
     sourceRoot = "${src.name}/smart-power-button";
     buildAndTestSubdir = "computer";
