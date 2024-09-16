@@ -21,20 +21,11 @@ in
 {
   environment = {
     systemPackages = with pkgs; [
-      maliit-keyboard
       sof-firmware
     ];
     sessionVariables.ALSA_CONFIG_UCM2 = "${chromebook-ucm-conf}/share/alsa/ucm2";
   };
 
-  system.replaceRuntimeDependencies = with pkgs; [
-    ({
-      original = alsa-ucm-conf;
-      replacement = chromebook-ucm-conf;
-    })
-  ];
-
-  # For nixos unstable
   services.pipewire.wireplumber.configPackages = [
     (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/51-increase-headroom.conf" ''
       monitor.alsa.rules = [
