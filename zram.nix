@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -8,7 +8,7 @@
     enable = true;
     settings = {
       zram0 = {
-        zram-size = "ram * 4";
+        zram-size = lib.mkForce "ram * 4";
         compression-algorithm = "zstd";
       };
     };

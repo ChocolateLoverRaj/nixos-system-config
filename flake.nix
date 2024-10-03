@@ -38,6 +38,13 @@
           jovian.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
           ./hosts/gaming-computer/configuration.nix
+          {
+            nix.settings = {
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+            };
+          }
+          nixos-cosmic.nixosModules.default
         ];
       };
       "raspberry-pi" = nixpkgs.lib.nixosSystem {

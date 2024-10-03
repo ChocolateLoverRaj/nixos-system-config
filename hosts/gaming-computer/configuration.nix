@@ -13,7 +13,6 @@
       ../../secure-boot.nix
       ../../users.nix
       ../../zram.nix
-      ./tv-gaming.nix
       ../../sound.nix
       ../../printing.nix
       ../../bluetooth.nix
@@ -22,18 +21,20 @@
       ../../locale.nix
       ../../time-zone.nix
       ../../packages.nix
-      ../../external-camera.nix
       ../../adb.nix
-      ../../screen-sharing.nix
       ../../nix-serve.nix
       ../../kernel.nix
       ../../ssh-server.nix
       ../../ld.nix
       ../../docker.nix
       ../../mosh.nix
-      ./manage-tv.nix
       ./heroic.nix
       ../../unfree-packages.nix
+      ./manage-tv.nix
+      ./tv-gaming.nix
+      ../../de.nix
+      ../../steam.nix
+      ./gpu.nix
     ];
 
   nix.settings.experimental-features = [
@@ -48,4 +49,14 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+
+  manage-tv.enable = false;
+  tv-gaming.enable = false;
+
+  # specialisation = {
+  #   desktop.configuration = {
+  #     imports = [
+  #     ];
+  #   };
+  # };
 }
