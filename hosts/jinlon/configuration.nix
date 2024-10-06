@@ -38,6 +38,7 @@
       ../../fonts.nix
       ../../docker.nix
       ../../unfree-packages.nix
+      ../../ssh-server.nix
     ];
 
   nix.settings.experimental-features = [
