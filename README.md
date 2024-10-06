@@ -4,4 +4,3 @@ Apply configuration based on the host name. For example, with Jinlon:
 ```bash
 sudo nixos-rebuild switch --flake .#jinlon
 ```
-Note that Jinlon needs `--impure` when running `nixos-rebuild`, because it uses `replaceRuntimeDependencies` for Chromebook audio.
