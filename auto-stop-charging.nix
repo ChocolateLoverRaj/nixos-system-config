@@ -5,12 +5,12 @@ let
   scheduled-charge = with pkgs; rustPlatform.buildRustPackage rec {
     pname = "scheduled-charge";
     version = "1.0.0";
-    cargoHash = "sha256-Q4bJjes43FbuO4FbfhYPRH4YFZU0leUCLlV1iR6nCbI=";
+    cargoHash = "sha256-TUZVCKG0+i7tUngoG2Rrx6n2QtDWlcJ0PKoOa2At6h8=";
     src = fetchFromGitHub {
       owner = "ChocolateLoverRaj";
       repo = "cros-ec-battery";
-      rev = "ec4a3358e92c72b40b8c743be78a8afd3c1bb4e2";
-      hash = "sha256-VebdqKqnzWsxMBY4vSuPdFKS5erafg5gMK+jzE7yOv0=";
+      rev = "0ccc6ebaa2f7541e7e1009130d1c0aba73c3a7fc";
+      hash = "sha256-JsJjOIm7jstqGMl3OOfdv69UV7OrsxLcEwiG6Ymm2aM=";
       fetchSubmodules = true;
     };
     sourceRoot = "${src.name}/scheduled-charge";
