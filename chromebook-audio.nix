@@ -6,8 +6,8 @@ let
     wttsrc = fetchFromGitHub {
       owner = "WeirdTreeThing";
       repo = "chromebook-ucm-conf";
-      rev = "b6ce2a7";
-      hash = "sha256-QRUKHd3RQmg1tnZU8KCW0AmDtfw/daOJ/H3XU5qWTCc=";
+      rev = "ddeafa85ed36e31aed1c05ca6987ee125c52f238";
+      hash = "sha256-Y/lu570acQ8ejdfUKL3l/DR3BdUofv/HwuPFVaxbLB4=";
     };
     postInstall = ''
       cp -R $wttsrc/common/* $out/share/alsa/ucm2/common

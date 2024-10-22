@@ -7,6 +7,7 @@
     "steam-original"
     "steam-run"
     "steam-jupiter-original"
+    "steam-unwrapped"
     "steamdeck-hw-theme"
     "google-chrome"
   ];
