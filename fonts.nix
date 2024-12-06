@@ -2,6 +2,6 @@
 
 {
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts.code-new-roman
   ];
 }

@@ -17,6 +17,7 @@ in
     fastfetch
     bat
     kdePackages.ksystemlog
+    gnome-logs
     gparted
     kdePackages.partitionmanager
     usbutils

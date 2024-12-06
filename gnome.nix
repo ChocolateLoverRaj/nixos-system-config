@@ -20,6 +20,9 @@
   hardware.sensor.iio.enable = true;
 
   environment = {
+    systemPackages = with pkgs; [
+      gnome-software
+    ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };

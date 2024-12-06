@@ -17,7 +17,7 @@
       ../../users.nix
       ../../zram.nix
       ../../steam.nix
-      ../../de.nix
+      ../../gnome.nix
       ../../sound.nix
       ../../printing.nix
       ../../bluetooth.nix
@@ -39,6 +39,8 @@
       ../../docker.nix
       ../../unfree-packages.nix
       ../../ssh-server.nix
+      ../../graphics.nix
+      # ../../cros-fp.nix
     ];
 
   nix.settings.experimental-features = [

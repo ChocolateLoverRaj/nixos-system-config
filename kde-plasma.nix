@@ -35,6 +35,8 @@
       kdePackages.kaccounts-providers
       kdePackages.kio-gdrive
       kdePackages.signond
+      # KDE Flatpak GUI
+      kdePackages.discover
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
