@@ -3,6 +3,7 @@
 {
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
-    gnome.gnome-software
+    # gnome.gnome-software
+    kdePackages.discover
   ];
 }

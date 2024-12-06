@@ -7,5 +7,6 @@
       enable = true;
       setSocketVariable = true;
     };
+    liveRestore = false;
   };
 }

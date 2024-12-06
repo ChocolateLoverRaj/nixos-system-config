@@ -18,25 +18,7 @@
         };
       };
     };
-    # xserver = {
-    #   enable = true;
-    #   displayManager = {
-    #     gdm = {
-    #       enable = true;
-    #     };
-    #   };
-    #   desktopManager = {
-    #     gnome = {
-    #       enable = true;
-    #     };
-    #   };
-    # };
   };
-  # Automatic screen rotation - https://nixos.wiki/wiki/GNOME
-  hardware.sensor.iio.enable = true;
-
-  # Needed to have both GNOME and KDE
-  programs.ssh.askPassword = "${pkgs.plasma5Packages.ksshaskpass}/bin/ksshaskpass";
 
   environment = {
     systemPackages = with pkgs; [

@@ -34,7 +34,7 @@
       "gaming-computer" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          jovian.nixosModules.default
+          # jovian.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
           ./hosts/gaming-computer/configuration.nix
           {

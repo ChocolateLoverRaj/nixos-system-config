@@ -31,10 +31,12 @@
       ./heroic.nix
       ../../unfree-packages.nix
       ./manage-tv.nix
-      ./tv-gaming.nix
-      ../../de.nix
+      # ./tv-gaming.nix
       ../../steam.nix
-      ./gpu.nix
+      # ./gpu.nix
+      ../../flatpak.nix
+      ../../debugging.nix
+      ../../kde-plasma.nix
     ];
 
   nix.settings.experimental-features = [
@@ -51,7 +53,7 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   manage-tv.enable = false;
-  tv-gaming.enable = false;
+  # tv-gaming.enable = false;
 
   # specialisation = {
   #   desktop.configuration = {
