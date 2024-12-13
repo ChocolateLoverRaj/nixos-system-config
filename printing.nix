@@ -42,6 +42,7 @@
             license = licenses.unfree;
           };
         })
+        epson-escpr2
       ];
       # Share printers - https://nixos.wiki/wiki/Printing#Printer_sharing
       listenAddresses = [ "*:631" ];
