@@ -40,7 +40,7 @@
       ../../unfree-packages.nix
       ../../ssh-server.nix
       ../../graphics.nix
-      # ../../cros-fp.nix
+      ../../cros-fp.nix
     ];
 
   nix.settings.experimental-features = [
@@ -57,4 +57,13 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   networking.hostName = "jinlon";
+
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      {
+        from = 4321;
+        to = 4323;
+      }
+    ];
+  };
 }
