@@ -27,6 +27,8 @@ in
     kdiskmark
     unrar-wrapper
     mosh
+    fclones
+    tree
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox

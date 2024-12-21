@@ -42,4 +42,10 @@ in
 
   environment.systemPackages = with pkgs; [ cloudflared ];
   programs.coolercontrol.enable = true;
+
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      { from = 4321; to = 4323; }
+    ];
+  };
 }
