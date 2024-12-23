@@ -23,7 +23,7 @@
       ../../packages.nix
       ../../adb.nix
       ../../nix-serve.nix
-      ../../kernel.nix
+      # ../../kernel.nix
       ../../ssh-server.nix
       ../../ld.nix
       ../../docker.nix
