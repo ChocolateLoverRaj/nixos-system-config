@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  boot.supportedFilesystems = [
+    "zfs"
+  ];
+}

@@ -9,6 +9,7 @@ let
 in
 {
   networking.hostName = "gaming-computer";
+  networking.hostId = "AF78702B";
   networking.networkmanager.enable = true;
   services.caddy = {
     enable = true;

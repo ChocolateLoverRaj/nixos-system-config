@@ -37,6 +37,7 @@
       ../../flatpak.nix
       ../../debugging.nix
       ../../kde-plasma.nix
+      ../../zfs.nix
     ];
 
   nix.settings.experimental-features = [
