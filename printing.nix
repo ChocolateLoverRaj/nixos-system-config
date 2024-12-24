@@ -50,6 +50,9 @@
       browsing = true;
       defaultShared = true;
       openFirewall = true;
+      extraConf = ''
+        DefaultEncryption Never
+      '';
     };
 
     # This is needed to discover printers in the network

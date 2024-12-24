@@ -53,6 +53,12 @@
           nixos-hardware.nixosModules.raspberry-pi-3
         ];
       };
+      "robo360" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/robo360/configuration.nix
+        ];
+      };
     };
   };
 }
