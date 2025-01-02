@@ -37,7 +37,7 @@ in
     ectool
     # For new users to get started
     firefox
-    bottles
+    # bottles
     kdePackages.dragon
     vlc
     google-chrome

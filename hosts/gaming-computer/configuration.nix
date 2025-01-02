@@ -28,7 +28,7 @@
       ../../ld.nix
       ../../docker.nix
       ../../mosh.nix
-      ./heroic.nix
+      # ./heroic.nix
       ../../unfree-packages.nix
       ./manage-tv.nix
       # ./tv-gaming.nix
@@ -62,4 +62,9 @@
   #     ];
   #   };
   # };
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 }
