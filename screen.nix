@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  programs.screen = {
+    enable = true;
+  };
+}

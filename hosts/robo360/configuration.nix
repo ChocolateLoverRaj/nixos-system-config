@@ -34,6 +34,8 @@
     ../../ram-tmp.nix
     ./para-z.nix
     ./keys.nix
+    ../../screen.nix
+    ../../mosh.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
