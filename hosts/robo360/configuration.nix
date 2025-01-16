@@ -11,24 +11,29 @@
     ../../unsecure-boot.nix
     ../../users.nix
     ../../zram.nix
-    #../../networking.nix
     ../../locale.nix
     ../../time-zone.nix
-    #../../auto-stop-charging.nix
     ../../nix-serve.nix
-    # ../../docker.nix
+    ../../docker.nix
     ../../ssh-server.nix
     ./packages.nix
     ./power.nix
     ./networking.nix
-    ./nextcloud.nix
-    ./photos.nix
     ./ddns.nix
     ./home-assistant.nix
     ./wireguard.nix
     ../../printing.nix
     ../../unfree-packages.nix
+    ../../kernel.nix
     ../../zfs.nix
+    ./samba.nix
+    ./network-benchmark.nix
+    ./maintain-charge.nix
+    ./cockpit.nix
+    ./keys.nix
+    ../../ram-tmp.nix
+    ./para-z.nix
+    ./keys.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

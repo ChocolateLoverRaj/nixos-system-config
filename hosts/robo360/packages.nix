@@ -16,8 +16,10 @@ in {
     bat
     mosh
     btop
+    gptfdisk
+    parted
     # To manage packages in home folder
-    #home-manager
+    home-manager
     # For distrobox and toolbox
     # podman
     # Important for Chromebooks

@@ -4,7 +4,7 @@
   networking.hostName = "robo360";
   networking.hostId = "8F3A6B92";
   networking.networkmanager.enable = true;
-  #networking.firewall.enable = true;
+  networking.firewall.enable = true;
   services.cloudflared = {
     enable = true;
     user = "root";
@@ -18,6 +18,7 @@
           # "immich.whats4meal.com" = "http://localhost:2283";
           "photoprism.whats4meal.com" = "http://localhost:5000";
           "ente.whats4meal.com" = "http://localhost:8080";
+          "cockpit.whats4meal.com" = "http://localhost:9090";
         };
         default = "http_status:404";
       };

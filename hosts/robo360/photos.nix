@@ -3,7 +3,14 @@
 {
   services.immich = {
     enable = true;
-    environment.IMMICH_MACHINE_LEARNING_URL = "http://localhost:3003";
+    settings = {
+      storageTemplate = {
+        enabled = true;
+        hashVerificationEnabled = true;
+        template = "{{y}}/{{y}}-{{MM}}-{{dd}}/{{filename}}";
+      };
+    };
+    # environment.IMMICH_MACHINE_LEARNING_URL = "http://localhost:3003";
   };
   hardware.graphics = {
     enable = true;
