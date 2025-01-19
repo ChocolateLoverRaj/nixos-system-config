@@ -7,7 +7,7 @@
         enable = true;
       };
       cosmic = {
-        enable = true;
+        # enable = true;
       };
     };
     displayManager = {

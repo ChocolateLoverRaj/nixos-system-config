@@ -38,6 +38,7 @@
       ../../debugging.nix
       ../../kde-plasma.nix
       ../../zfs.nix
+      ./keyd.nix
     ];
 
   nix.settings.experimental-features = [
