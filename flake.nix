@@ -28,7 +28,7 @@
             };
           }
           nixos-cosmic.nixosModules.default
-          # rust-fp.nixosModules.default
+          rust-fp.nixosModules.default
         ];
       };
       "gaming-computer" = nixpkgs.lib.nixosSystem {

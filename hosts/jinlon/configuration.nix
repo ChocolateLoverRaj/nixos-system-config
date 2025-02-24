@@ -17,7 +17,7 @@
       ../../users.nix
       ../../zram.nix
       ../../steam.nix
-      ../../gnome.nix
+      ../../kde-plasma.nix
       ../../sound.nix
       ../../printing.nix
       ../../bluetooth.nix
@@ -26,21 +26,22 @@
       ../../locale.nix
       ../../time-zone.nix
       ../../packages.nix
-      ../../external-camera.nix
+      # ../../external-camera.nix
       ../../waydroid.nix
       ../../adb.nix
       ../../screen-sharing.nix
-      ../../auto-stop-charging.nix
-      ../../stop-charging-before-suspend.nix
+      # ../../auto-stop-charging.nix
+      # ../../stop-charging-before-suspend.nix
       ../../nix-serve.nix
-      ../../kernel.nix
+      # ../../kernel.nix
       ./access-remote-machines.nix
       ../../fonts.nix
       ../../docker.nix
       ../../unfree-packages.nix
       ../../ssh-server.nix
       ../../graphics.nix
-      ../../cros-fp.nix
+      # ../../cros-fp.nix
+      # ./debugging.nix
     ];
 
   nix.settings.experimental-features = [
