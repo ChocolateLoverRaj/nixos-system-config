@@ -2,44 +2,50 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../virt-manager.nix
-      ../../secure-boot.nix
-      ../../users.nix
-      ../../zram.nix
-      ../../sound.nix
-      ../../printing.nix
-      ../../bluetooth.nix
-      ../../podman.nix
-      ./networking.nix
-      ../../locale.nix
-      ../../time-zone.nix
-      ../../packages.nix
-      ../../adb.nix
-      ../../nix-serve.nix
-      # ../../kernel.nix
-      ../../ssh-server.nix
-      ../../ld.nix
-      ../../docker.nix
-      ../../mosh.nix
-      # ./heroic.nix
-      ../../unfree-packages.nix
-      ./manage-tv.nix
-      # ./tv-gaming.nix
-      ../../steam.nix
-      # ./gpu.nix
-      ../../flatpak.nix
-      ../../debugging.nix
-      ../../kde-plasma.nix
-      ../../zfs.nix
-      ./keyd.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../virt-manager.nix
+    ../../secure-boot.nix
+    ../../users.nix
+    ../../zram.nix
+    ../../sound.nix
+    ../../printing.nix
+    ../../bluetooth.nix
+    ../../podman.nix
+    ./networking.nix
+    ../../locale.nix
+    ../../time-zone.nix
+    ../../packages.nix
+    ../../adb.nix
+    ../../nix-serve.nix
+    # ../../kernel.nix
+    ../../ssh-server.nix
+    ../../ld.nix
+    ../../docker.nix
+    ../../mosh.nix
+    ./heroic.nix
+    ../../unfree-packages.nix
+    ./manage-tv.nix
+    # ./tv-gaming.nix
+    ../../steam.nix
+    # ./gpu.nix
+    ../../flatpak.nix
+    ../../debugging.nix
+    # ../../kde-plasma.nix
+    ../../gnome.nix
+    ../../zfs.nix
+    ./keyd.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
