@@ -2,47 +2,54 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../chromebook-audio.nix
-      ../../keyd.nix
-      ../../virt-manager.nix
-      ../../flatpak.nix
-      ../../unsecure-boot.nix
-      ../../users.nix
-      ../../zram.nix
-      ../../steam.nix
-      ../../kde-plasma.nix
-      ../../sound.nix
-      ../../printing.nix
-      ../../bluetooth.nix
-      ../../podman.nix
-      ../../networking.nix
-      ../../locale.nix
-      ../../time-zone.nix
-      ../../packages.nix
-      # ../../external-camera.nix
-      ../../waydroid.nix
-      ../../adb.nix
-      ../../screen-sharing.nix
-      # ../../auto-stop-charging.nix
-      # ../../stop-charging-before-suspend.nix
-      ../../nix-serve.nix
-      # ../../kernel.nix
-      ./access-remote-machines.nix
-      ../../fonts.nix
-      ../../docker.nix
-      ../../unfree-packages.nix
-      ../../ssh-server.nix
-      ../../graphics.nix
-      # ../../cros-fp.nix
-      # ./debugging.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../chromebook-audio.nix
+    ../../keyd.nix
+    ../../virt-manager.nix
+    ../../flatpak.nix
+    ../../unsecure-boot.nix
+    ../../users.nix
+    ../../zram.nix
+    ../../steam.nix
+    # ../../kde-plasma.nix
+    ../../gnome.nix
+    ../../sound.nix
+    ../../printing.nix
+    #../../bluetooth.nix
+    ../../podman.nix
+    ../../networking.nix
+    ../../locale.nix
+    ../../time-zone.nix
+    ../../packages.nix
+    # ../../external-camera.nix
+    ../../waydroid.nix
+    ../../adb.nix
+    ../../screen-sharing.nix
+    # ../../auto-stop-charging.nix
+    # ../../stop-charging-before-suspend.nix
+    ../../nix-serve.nix
+    # ../../kernel.nix
+    ./access-remote-machines.nix
+    ../../fonts.nix
+    ../../docker.nix
+    ../../unfree-packages.nix
+    ../../ssh-server.nix
+    ../../graphics.nix
+    ../../cros-fp.nix
+    # ./debugging.nix
+    ../../tailscale.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
