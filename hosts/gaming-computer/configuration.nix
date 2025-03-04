@@ -45,6 +45,7 @@
     ../../gnome.nix
     ../../zfs.nix
     ./keyd.nix
+    ../../tailscale.nix
   ];
 
   nix.settings.experimental-features = [
