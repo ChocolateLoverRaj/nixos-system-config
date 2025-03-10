@@ -2,6 +2,7 @@
 
 let
   ectool = (pkgs.callPackage ./cros-ectool.nix { });
+  ectool-rs = (pkgs.callPackage ./ectool-rs.nix { });
 in
 {
   # List packages installed in system profile. To search, run:
@@ -16,25 +17,23 @@ in
     neofetch
     fastfetch
     bat
-    kdePackages.ksystemlog
     gnome-logs
     gparted
-    kdePackages.partitionmanager
     usbutils
-    kdePackages.isoimagewriter
-    kdePackages.kclock
-    niv
     kdiskmark
     unrar-wrapper
     mosh
     fclones
     tree
+    busybox
+    gptfdisk
     # To manage packages in home folder
     home-manager
     # For distrobox and toolbox
     podman
     # Important for Chromebooks
     ectool
+    # ectool-rs
     # For new users to get started
     firefox
     # bottles

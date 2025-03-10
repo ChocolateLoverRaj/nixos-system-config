@@ -1,19 +1,25 @@
-{ config, pkgs, lib, ... }:
-
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
-  chromebook-ucm-conf = with pkgs; alsa-ucm-conf.overrideAttrs {
-    wttsrc = fetchFromGitHub {
-      owner = "WeirdTreeThing";
-      repo = "alsa-ucm-conf-cros";
-      rev = "00b399ed00930bfe544a34358547ab20652d71e3";
-      hash = "sha256-lRrgZDb3nnZ6/UcIsfjqAAbbSMOkP3lBGoGzZci+c1k=";
+  chromebook-ucm-conf =
+    with pkgs;
+    alsa-ucm-conf.overrideAttrs {
+      wttsrc = fetchFromGitHub {
+        owner = "WeirdTreeThing";
+        repo = "alsa-ucm-conf-cros";
+        rev = "5b4253786ac0594a6ae9fe06336b54d8bc66efb0";
+        hash = "sha256-CeZtEA2Wq0zle/3OHbob2GDH4ffczGqZ2qVItKME5eI=";
+      };
+      postInstall = ''
+        cp -R $wttsrc/ucm2/* $out/share/alsa/ucm2
+        cp -R $wttsrc/overrides/* $out/share/alsa/ucm2/conf.d
+      '';
     };
-    postInstall = ''
-      cp -R $wttsrc/ucm2/* $out/share/alsa/ucm2
-      cp -R $wttsrc/overrides/* $out/share/alsa/ucm2/conf.d
-    '';
-  };
 in
 {
   environment = {
