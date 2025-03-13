@@ -22,8 +22,8 @@
     ../../users.nix
     ../../zram.nix
     ../../steam.nix
-    # ../../kde-plasma.nix
-    ../../gnome.nix
+    ../../kde-plasma.nix
+    # ../../gnome.nix
     ../../sound.nix
     ../../printing.nix
     #../../bluetooth.nix
@@ -46,7 +46,7 @@
     ../../unfree-packages.nix
     ../../ssh-server.nix
     ../../graphics.nix
-    ../../cros-fp.nix
+    # ../../cros-fp.nix
     # ./debugging.nix
     ../../tailscale.nix
   ];
