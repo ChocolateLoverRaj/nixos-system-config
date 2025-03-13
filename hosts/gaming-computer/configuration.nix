@@ -46,6 +46,7 @@
     ../../zfs.nix
     ./keyd.nix
     ../../tailscale.nix
+    ../../iperf3.nix
   ];
 
   nix.settings.experimental-features = [

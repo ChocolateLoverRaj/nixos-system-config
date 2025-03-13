@@ -10,7 +10,6 @@ in
 {
   networking.hostName = "gaming-computer";
   networking.hostId = "AF78702B";
-  networking.networkmanager.enable = true;
   services.caddy = {
     enable = true;
     virtualHosts = {
@@ -24,7 +23,6 @@ in
       '';
     };
   };
-  networking.firewall.enable = true;
   services.cloudflared = {
     enable = true;
     user = "root";
@@ -44,9 +42,25 @@ in
   environment.systemPackages = with pkgs; [ cloudflared ];
   programs.coolercontrol.enable = true;
 
-  networking.firewall = {
-    allowedTCPPortRanges = [
-      { from = 4321; to = 4323; }
-    ];
+  networking = {
+    # nat = {
+    #   enable = true;
+    # };
+    firewall = {
+      enable = false;
+      # checkReversePath = "loose";
+      allowedTCPPortRanges = [
+        {
+          from = 4321;
+          to = 4323;
+        }
+      ];
+      allowedTCPPorts = [ 53 ];
+      allowedUDPPorts = [ 53 ];
+    };
   };
+  # services.pixiecore = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
 }
