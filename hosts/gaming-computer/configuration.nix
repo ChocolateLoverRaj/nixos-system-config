@@ -41,8 +41,8 @@
     # ./gpu.nix
     ../../flatpak.nix
     ../../debugging.nix
-    # ../../kde-plasma.nix
-    ../../gnome.nix
+    ../../kde-plasma.nix
+    # ../../gnome.nix
     ../../zfs.nix
     ./keyd.nix
     ../../tailscale.nix
