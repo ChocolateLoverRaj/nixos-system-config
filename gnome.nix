@@ -27,4 +27,10 @@
       NIXOS_OZONE_WL = "1";
     };
   };
+
+  # https://wiki.nixos.org/wiki/KDE_Connect#GSConnect_(for_GNOME)
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 }
