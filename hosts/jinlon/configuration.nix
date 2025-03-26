@@ -26,7 +26,6 @@
     # ../../gnome.nix
     ../../sound.nix
     ../../printing.nix
-    #../../bluetooth.nix
     ../../podman.nix
     ../../networking.nix
     ../../locale.nix
