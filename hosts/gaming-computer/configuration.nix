@@ -20,7 +20,6 @@
     ../../zram.nix
     ../../sound.nix
     ../../printing.nix
-    ../../bluetooth.nix
     ../../podman.nix
     ./networking.nix
     ../../locale.nix
@@ -47,6 +46,7 @@
     ./keyd.nix
     ../../tailscale.nix
     ../../iperf3.nix
+    ../../ollama.nix
   ];
 
   nix.settings.experimental-features = [

@@ -7,7 +7,7 @@
         enable = true;
       };
       cosmic = {
-        enable = true;
+        # enable = true;
       };
     };
     displayManager = {
@@ -47,4 +47,6 @@
       enable = true;
     };
   };
+
+  networking.networkmanager.enable = true;
 }
