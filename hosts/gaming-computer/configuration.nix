@@ -47,6 +47,7 @@
     ../../tailscale.nix
     ../../iperf3.nix
     ../../ollama.nix
+    ../../game-mode.nix
   ];
 
   nix.settings.experimental-features = [
