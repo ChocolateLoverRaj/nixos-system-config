@@ -2,13 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  inputs,
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 
 {
   imports = [
@@ -22,8 +16,8 @@
     ../../users.nix
     ../../zram.nix
     ../../steam.nix
-    ../../kde-plasma.nix
-    # ../../gnome.nix
+    # ../../kde-plasma.nix
+    ../../gnome.nix
     ../../sound.nix
     ../../printing.nix
     ../../podman.nix
@@ -64,13 +58,4 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   networking.hostName = "jinlon";
-
-  networking.firewall = {
-    allowedTCPPortRanges = [
-      {
-        from = 4321;
-        to = 4323;
-      }
-    ];
-  };
 }

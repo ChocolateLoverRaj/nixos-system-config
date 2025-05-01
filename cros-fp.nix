@@ -8,8 +8,8 @@
           domain = "gitlab.freedesktop.org";
           owner = "Xelef2000";
           repo = "libfprint";
-          rev = "779e82b1e4298996edc1d0eab6b5b97b92494e2f";
-          hash = "sha256-KudADZ5zdtyBsfar8FeFRDSuR0ztLbhEWy9pCV4MkWE=";
+          rev = "5bdb3a29a85fd408178339e980cc18fce7fa1875";
+          hash = "sha256-Zsd5koxsnI6LqzhGQhtMe/mOVBcclLJPexK193P/mow=";
         };
       });
     })

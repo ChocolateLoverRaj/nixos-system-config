@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -24,6 +24,18 @@
         extraGroups = [
           "networkmanager"
           "wheel"
+          "dialout"
+          "tty"
+          "adbusers"
+          "input"
+        ];
+      };
+
+      ajit = {
+        isNormalUser = true;
+        description = "Ajit";
+        extraGroups = [
+          "networkmanager"
           "dialout"
           "tty"
           "adbusers"
