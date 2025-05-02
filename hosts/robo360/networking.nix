@@ -7,7 +7,6 @@
   networking.firewall.enable = true;
   services.cloudflared = {
     enable = true;
-    user = "root";
     tunnels = {
       "9f98a32b-8fef-4941-9174-79fdd7ce49c7.json" = {
         credentialsFile =

@@ -4,7 +4,7 @@ let
   maintain-charge = with pkgs; rustPlatform.buildRustPackage rec {
     pname = "maintain-charge";
     version = "0.1.0";
-    cargoHash = "sha256-Gd186C6xDIcF43NUCMx0J8rhsPmhwvGCdc6N8J9GKME=";
+    cargoHash = "sha256-tFvEMKAzkauhW2bztKNhOfrPwAXb8duBgpPxbd14ElQ=";
     src = fetchFromGitHub {
       owner = "ChocolateLoverRaj";
       repo = "maintain-charge";
