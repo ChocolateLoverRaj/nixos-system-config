@@ -21,10 +21,10 @@
     ./networking.nix
     ./ddns.nix
     ./home-assistant.nix
-    ./wireguard.nix
+    # ./wireguard.nix
     ../../printing.nix
     ../../unfree-packages.nix
-    ../../kernel.nix
+    # ../../kernel.nix
     ../../zfs.nix
     ./samba.nix
     ./network-benchmark.nix
@@ -36,6 +36,7 @@
     ./keys.nix
     ../../screen.nix
     ../../mosh.nix
+    ../../tailscale.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

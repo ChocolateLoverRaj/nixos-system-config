@@ -12,7 +12,7 @@
         "guest account" = "nobody";
         "map to guest" = "Bad Password";
         # Only allow SMB on home network because it's not recommended to expose SMB to the internet
-        "hosts allow" = "192.168. 127.0.0.1 localhost";
+        "hosts allow" = "192.168. 127.0.0.1 localhost 100.118.30.62";
         # This stops Samba from creating annoying extended attributes for every file created / copied through Samba  
         "store dos attributes" = "no";
         # This makes it so that if the client writes and waits for physical disk write, Samba will actually wait until the physical disk is written to before saying it's done writing.

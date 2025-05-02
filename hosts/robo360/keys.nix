@@ -1,9 +1,9 @@
 { ... }:
 
 {
-  fileSystems."/mnt/keys" = {
-    device = "/dev/disk/by-uuid/2624-E2D0";
-    fsType = "vfat";
-    options = [ "nofail" ];
-  };
+  # fileSystems."/mnt/keys" = {
+  #   device = "/dev/disk/by-uuid/2989-2930";
+  #   fsType = "vfat";
+  #   options = [ "nofail" ];
+  # };
 }
