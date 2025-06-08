@@ -39,7 +39,7 @@
     ../../unfree-packages.nix
     ../../ssh-server.nix
     ../../graphics.nix
-    # ../../cros-fp.nix
+    ../../cros-fp.nix
     # ./debugging.nix
     ../../tailscale.nix
   ];
