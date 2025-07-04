@@ -42,6 +42,18 @@
           "input"
         ];
       };
+
+      jui = {
+        isNormalUser = true;
+        description = "Jui";
+        extraGroups = [
+          "networkmanager"
+          "dialout"
+          "tty"
+          "adbusers"
+          "input"
+        ];
+      };
     };
 
     groups = {
