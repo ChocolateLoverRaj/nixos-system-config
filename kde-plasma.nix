@@ -7,7 +7,7 @@
         enable = true;
       };
       cosmic = {
-        # enable = true;
+        enable = true;
       };
     };
     displayManager = {
@@ -16,6 +16,9 @@
         wayland = {
           enable = true;
         };
+      };
+      cosmic-greeter = {
+        # enable = true;
       };
     };
   };
@@ -45,6 +48,12 @@
   programs = {
     kdeconnect = {
       enable = true;
+    };
+    hyprland = {
+      enable = true;
+      xwayland = {
+        enable = true;
+      };
     };
   };
 

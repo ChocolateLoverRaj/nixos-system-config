@@ -33,9 +33,11 @@
     ../../steam.nix
     # ./gpu.nix
     ../../flatpak.nix
-    ../../debugging.nix
+    # ../../debugging.nix
     ../../kde-plasma.nix
     # ../../gnome.nix
+    # ../../cinnamon.nix
+    # ../../hyprland.nix
     ../../zfs.nix
     ./keyd.nix
     ../../tailscale.nix
@@ -68,8 +70,8 @@
   #   };
   # };
 
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-  };
+  # services.syncthing = {
+  #   enable = true;
+  #   openDefaultPorts = true;
+  # };
 }
