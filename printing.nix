@@ -6,7 +6,7 @@
     printing = {
       enable = true;
       drivers = with pkgs; [
-        (stdenv.mkDerivation rec {
+        (stdenv.mkDerivation {
           name = "vevor-cups";
           version = "1.0.2";
           nativeBuildInputs = with pkgs; [
@@ -43,6 +43,30 @@
           };
         })
         epson-escpr2
+        (stdenv.mkDerivation {
+          name = "rollo-x1038";
+          version = "1.8.4";
+          src = fetchTarball {
+            url = "https://rollo-main.b-cdn.net/driver-dl/linux/rollo-cups-driver-1.8.4.tar.gz";
+            sha256 = "sha256:0x8dd6wj5n974k3vb3iir61dd46ag13zj7s9dhgv722cky7v57h4";
+          };
+          nativeBuildInputs = [
+            cups
+          ];
+          installPhase = ''
+            install -d -m 755 $out/lib/cups/filter
+            install -c -m 755 rastertorollo $out/lib/cups/filter
+            install -d -m 755 $out/share/cups/model
+            install -c -m 644 rollo-x1038.ppd $out/share/cups/model
+          '';
+          meta = with lib; {
+            description = "CUPS Linux drivers for the Rollo X1038 thermal label printer";
+            downloadPage = "https://www.rollo.com/driver-linux/";
+            platforms = platforms.linux;
+            maintainers = with maintainers; [ ChocolateLoverRaj ];
+            license = licenses.gpl3;
+          };
+        })
       ];
       # Share printers - https://nixos.wiki/wiki/Printing#Printer_sharing
       listenAddresses = [ "*:631" ];

@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   auth = ''
@@ -31,7 +31,7 @@ in
     #   enable = true;
     # };
     firewall = {
-      enable = false;
+      enable = true;
       # checkReversePath = "loose";
       allowedTCPPortRanges = [
         {

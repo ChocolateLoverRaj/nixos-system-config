@@ -40,6 +40,5 @@ in
     # bottles
     kdePackages.dragon
     vlc
-    google-chrome
   ];
 }
