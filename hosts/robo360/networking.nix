@@ -31,6 +31,9 @@
       "immich.whats4meal.com".extraConfig = ''
         reverse_proxy localhost:2283
       '';
+      "clraj.duckdns.org".extraConfig = ''
+        reverse_proxy localhost:2283
+      '';
     };
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];

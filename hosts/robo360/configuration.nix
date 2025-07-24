@@ -37,6 +37,8 @@
     ../../screen.nix
     ../../mosh.nix
     ../../tailscale.nix
+    ./file-systems.nix
+    ./hard-drives.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
