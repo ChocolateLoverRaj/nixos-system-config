@@ -10,4 +10,6 @@
     enable = true;
     openFirewall = true;
   };
+
+  services.udisks2.enable = true;
 }
