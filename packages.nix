@@ -23,7 +23,6 @@ in
     usbutils
     kdePackages.isoimagewriter
     kdePackages.kclock
-    niv
     kdiskmark
     unrar-wrapper
     mosh
