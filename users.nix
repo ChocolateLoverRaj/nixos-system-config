@@ -15,6 +15,7 @@
           "adbusers"
           "input"
           "diy_usb_device"
+          "podman"
         ];
       };
 
