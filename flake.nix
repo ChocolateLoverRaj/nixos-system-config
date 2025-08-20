@@ -27,12 +27,6 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/jinlon/configuration.nix
-            {
-              nix.settings = {
-                substituters = [ "https://cosmic.cachix.org/" ];
-                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-              };
-            }
             # rust-fp.nixosModules.default
           ];
         };
@@ -42,12 +36,6 @@
             # jovian.nixosModules.default
             lanzaboote.nixosModules.lanzaboote
             ./hosts/gaming-computer/configuration.nix
-            {
-              nix.settings = {
-                substituters = [ "https://cosmic.cachix.org/" ];
-                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-              };
-            }
           ];
         };
         "raspberry-pi" = nixpkgs.lib.nixosSystem {
