@@ -28,7 +28,7 @@
     ../../mosh.nix
     ./heroic.nix
     ../../unfree-packages.nix
-    ./manage-tv.nix
+    # ./manage-tv.nix
     # ./tv-gaming.nix
     ../../steam.nix
     # ./gpu.nix
@@ -60,7 +60,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  manage-tv.enable = false;
+  # manage-tv.enable = false;
   # tv-gaming.enable = false;
 
   # specialisation = {
