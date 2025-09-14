@@ -42,6 +42,7 @@
     ../../cros-fp.nix
     # ./debugging.nix
     ../../tailscale.nix
+    ../../zfs.nix
   ];
 
   nix.settings.experimental-features = [
@@ -58,4 +59,5 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   networking.hostName = "jinlon";
+  networking.hostId = "6706c17c";
 }

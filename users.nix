@@ -49,6 +49,7 @@
         description = "Jui";
         extraGroups = [
           "networkmanager"
+          "wheel"
           "dialout"
           "tty"
           "adbusers"
