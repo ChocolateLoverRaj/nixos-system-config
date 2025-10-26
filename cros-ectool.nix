@@ -1,14 +1,23 @@
-{ stdenv, pkgs, lib }:
+{
+  pkgs,
+  lib,
+}:
 
-pkgs.stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation {
   name = "cros-ectool";
-  nativeBuildInputs = with pkgs; [ cmake ninja pkg-config libusb1 libftdi1 ];
+  nativeBuildInputs = with pkgs; [
+    cmake
+    ninja
+    pkg-config
+    libusb1
+    libftdi1
+  ];
   src = pkgs.fetchFromGitLab {
     domain = "gitlab.howett.net";
     owner = "DHowett";
     repo = "ectool";
-    rev = "39d64fb0e79e874cfe9877af69158fc2520b1a80";
-    hash = "sha256-SHRnyqicFlviBDu3aH+uKVUstVxpIhZV6JSuZOgOwXU=";
+    rev = "0ac6155abbb7d4622d3bcf2cdf026dde2f80dad7";
+    hash = "sha256-EMOliuyWB0xyrYB+E9axZtJawnIVIAM5nx026tESi38=";
   };
   installPhase = ''
     mkdir -p $out/bin

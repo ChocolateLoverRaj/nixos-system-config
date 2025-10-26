@@ -7,7 +7,7 @@
         enable = true;
       };
       cosmic = {
-        enable = true;
+        # enable = true;
       };
     };
     displayManager = {
@@ -57,6 +57,6 @@
     };
   };
 
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 }

@@ -43,6 +43,7 @@
     # ./debugging.nix
     ../../tailscale.nix
     ../../zfs.nix
+    ../../ld.nix
   ];
 
   nix.settings.experimental-features = [

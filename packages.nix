@@ -34,7 +34,8 @@ in
     # For distrobox and toolbox
     podman
     # Important for Chromebooks
-    ectool
+    # ectool
+    fw-ectool
     # For new users to get started
     firefox
     # bottles

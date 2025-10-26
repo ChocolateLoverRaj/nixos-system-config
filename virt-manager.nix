@@ -1,18 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   virtualisation = {
     libvirtd = {
       enable = true;
-      # Enable TPM, needed for Windows 11
-      qemu = {
-        package = pkgs.qemu_kvm;
-        ovmf = {
-          enable = true;
-          packages = [ pkgs.OVMFFull.fd ];
-        };
-        swtpm.enable = true;
-      };
     };
     spiceUSBRedirection.enable = true;
   };
