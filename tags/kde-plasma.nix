@@ -37,6 +37,7 @@
       kdePackages.signond
       # KDE Flatpak GUI
       kdePackages.discover
+      libreoffice-qt
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";

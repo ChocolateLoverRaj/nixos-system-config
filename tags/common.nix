@@ -8,7 +8,7 @@
     ../modules/networking.nix
     ../modules/locale.nix
     ../modules/time-zone.nix
-    ../modules/ssh-server
+    ../modules/ssh-server.nix
     ../modules/ld.nix
     ../modules/unfree-packages.nix
     ../modules/zfs.nix
@@ -45,6 +45,10 @@
     tree
     dua
     fclones
+    tldr
+    eza
+    # This loops super duper cool
+    btop
     # To check SMART status of disks
     smartmontools
   ];

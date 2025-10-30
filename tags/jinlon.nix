@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../modules/chromebook.nix
+    ./chromebook.nix
   ];
   environment = {
     systemPackages = with pkgs; [

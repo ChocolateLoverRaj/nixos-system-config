@@ -8,7 +8,7 @@
     # For doing custom Android ROM stuff
     ../modules/adb.nix
     # For developing DIY USB devices, such as with RP2040
-    ../modules/diy-usb-devices.nix
+    ../modules/diy-usb-device.nix
     # For using toolbox / distrobox
     ../modules/podman.nix
     # For programming

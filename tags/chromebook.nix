@@ -9,5 +9,7 @@
     # The Framework ectool works well enough for Chromebooks
     # The ChromeOS ectool is not packaged
     fw-ectool
+    dmidecode
   ];
+  boot.kernelParams = ["iomem=relaxed"];
 }

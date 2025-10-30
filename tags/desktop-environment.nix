@@ -18,5 +18,7 @@
     kdiskmark
     # Most reliable video player
     vlc
+    # Good browser
+    firefox
   ];
 }
