@@ -1,7 +1,0 @@
-{ ... }:
-
-{
-  xdg.portal = {
-    enable = true;
-  };
-}

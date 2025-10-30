@@ -1,39 +1,32 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    jovian.url = "github:ChocolateLoverRaj/Jovian-NixOS";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
 
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-fp.url = "github:ChocolateLoverRaj/rust-fp";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
   outputs =
     {
-      self,
       nixpkgs,
-      jovian,
       lanzaboote,
-      rust-fp,
       nixos-hardware,
       ...
-    }@inputs:
+    }:
     {
       nixosConfigurations = {
         "jinlon" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/jinlon/configuration.nix
-            # rust-fp.nixosModules.default
           ];
         };
         "gaming-computer" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            # jovian.nixosModules.default
             lanzaboote.nixosModules.lanzaboote
             ./hosts/gaming-computer/configuration.nix
           ];

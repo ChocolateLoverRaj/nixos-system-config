@@ -2,46 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, lib, ... }:
+{ ... }:
 
 {
+  networking.hostName = "robo360";
+  networking.hostId = "8F3A6B92";
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../unsecure-boot.nix
-    ../../users.nix
-    ../../zram.nix
-    ../../locale.nix
-    ../../time-zone.nix
-    ../../nix-serve.nix
-    ../../docker.nix
-    ../../ssh-server.nix
-    ./packages.nix
-    ./power.nix
-    ./networking.nix
-    ./ddns.nix
-    ./home-assistant.nix
-    # ./wireguard.nix
-    ../../printing.nix
-    ../../unfree-packages.nix
-    # ../../kernel.nix
-    ../../zfs.nix
-    ./samba.nix
-    ./network-benchmark.nix
-    ./maintain-charge.nix
-    ./cockpit.nix
-    ./keys.nix
-    ../../ram-tmp.nix
-    ./para-z.nix
-    ./keys.nix
-    ../../screen.nix
-    ../../mosh.nix
-    ../../tailscale.nix
-    ./file-systems.nix
-    ./hard-drives.nix
+    ../../tags/common.nix
+    ../../tags/chromebook.nix
+    ../../tags/server.nix
   ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

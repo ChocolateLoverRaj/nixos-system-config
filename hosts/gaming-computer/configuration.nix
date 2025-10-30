@@ -5,51 +5,17 @@
 { ... }:
 
 {
+  networking.hostName = "gaming-computer";
+  networking.hostId = "AF78702B";
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../virt-manager.nix
-    ../../secure-boot.nix
-    ../../users.nix
-    ../../zram.nix
-    ../../sound.nix
-    ../../printing.nix
-    ../../podman.nix
-    ./networking.nix
-    ../../locale.nix
-    ../../time-zone.nix
-    ../../packages.nix
-    ../../adb.nix
-    ../../nix-serve.nix
-    # ../../kernel.nix
-    ../../ssh-server.nix
-    ../../ld.nix
-    ../../docker.nix
-    ../../mosh.nix
-    ./heroic.nix
-    ../../unfree-packages.nix
-    # ./manage-tv.nix
-    # ./tv-gaming.nix
-    ../../steam.nix
-    # ./gpu.nix
-    ../../flatpak.nix
-    # ../../debugging.nix
-    ../../kde-plasma.nix
-    # ../../gnome.nix
-    # ../../cinnamon.nix
-    # ../../hyprland.nix
-    ../../zfs.nix
-    ./keyd.nix
-    ../../tailscale.nix
-    ../../iperf3.nix
-    ../../ollama.nix
-    ../../game-mode.nix
-    ../../gc.nix
-  ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
+    ../../tags/common.nix
+    ../../tags/development.nix
+    ../../tags/tpm-secure-boot.nix
+    ../../tags/kde-plasma.nix
+    ../../tags/dedicated-gaming.nix
   ];
 
   # This value determines the NixOS release from which the default
@@ -59,19 +25,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-  # manage-tv.enable = false;
-  # tv-gaming.enable = false;
-
-  # specialisation = {
-  #   desktop.configuration = {
-  #     imports = [
-  #     ];
-  #   };
-  # };
-
-  # services.syncthing = {
-  #   enable = true;
-  #   openDefaultPorts = true;
-  # };
 }

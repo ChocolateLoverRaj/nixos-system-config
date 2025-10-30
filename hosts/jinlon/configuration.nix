@@ -5,50 +5,18 @@
 { ... }:
 
 {
+  networking.hostName = "jinlon";
+  networking.hostId = "6706c17c";
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../chromebook-audio.nix
-    ../../keyd.nix
-    ../../virt-manager.nix
-    ../../flatpak.nix
-    ../../unsecure-boot.nix
-    ../../users.nix
-    ../../zram.nix
-    ../../steam.nix
-    # ../../kde-plasma.nix
-    ../../gnome.nix
-    ../../sound.nix
-    ../../printing.nix
-    ../../podman.nix
-    ../../networking.nix
-    ../../locale.nix
-    ../../time-zone.nix
-    ../../packages.nix
-    # ../../external-camera.nix
-    ../../waydroid.nix
-    ../../adb.nix
-    ../../screen-sharing.nix
-    # ../../auto-stop-charging.nix
-    # ../../stop-charging-before-suspend.nix
-    ../../nix-serve.nix
-    # ../../kernel.nix
-    ./access-remote-machines.nix
-    ../../fonts.nix
-    ../../docker.nix
-    ../../unfree-packages.nix
-    ../../ssh-server.nix
-    ../../graphics.nix
-    ../../cros-fp.nix
-    # ./debugging.nix
-    ../../tailscale.nix
-    ../../zfs.nix
-    ../../ld.nix
-  ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
+    ../../tags/common.nix
+    ../../tags/chromebook.nix
+    ../../tags/jinlon.nix
+    ../../tags/development.nix
+    ../../tags/gnome.nix
+    ../../tags/light-gaming.nix
   ];
 
   # This value determines the NixOS release from which the default
@@ -58,7 +26,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-  networking.hostName = "jinlon";
-  networking.hostId = "6706c17c";
 }
