@@ -68,4 +68,6 @@
       };
     };
   };
+  # deep should save more memory than s2idle
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
 }
