@@ -20,5 +20,6 @@
     vlc
     # Good browser
     firefox
+    tor-browser
   ];
 }
