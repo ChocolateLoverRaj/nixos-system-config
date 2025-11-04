@@ -1,5 +1,5 @@
 # Contains common config for all of my NixOS machines
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ../modules/users.nix
@@ -60,7 +60,7 @@
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    timeout = 1;
+    timeout = lib.mkDefault 1;
   };
 
   boot.supportedFilesystems = [ "ntfs" ];

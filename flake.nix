@@ -44,6 +44,23 @@
             ./hosts/robo360/configuration.nix
           ];
         };
+        "installer" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            (
+              { pkgs, modulesPath, ... }:
+              {
+                imports = [
+                  (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix")
+                  ./tags/common.nix
+                  ./tags/chromebook.nix
+                  ./tags/asus.nix
+                ];
+                environment.etc.nixos-system-config.source = ./.;
+              }
+            )
+          ];
+        };
       };
     };
 }
