@@ -51,6 +51,8 @@
     btop
     # To check SMART status of disks
     smartmontools
+    # For troubleshooting DNS
+    dig
   ];
 
   programs.screen = {
