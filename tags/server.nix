@@ -11,7 +11,7 @@
   services.cloudflare-dyndns = {
     enable = true;
     domains = [
-      "immich.whats4meal.com"
+      # "immich.whats4meal.com"
       "wg.whats4meal.com"
       "iperf3.whats4meal.com"
       "sftp.whats4meal.com"
@@ -39,7 +39,7 @@
         ingress = {
           "robo360.whats4meal.com" = "ssh://localhost:22";
           "nextcloud.whats4meal.com" = "http://localhost:4000";
-          # "immich.whats4meal.com" = "http://localhost:2283";
+          "immich.whats4meal.com" = "http://localhost:2283";
           "photoprism.whats4meal.com" = "http://localhost:5000";
           "ente.whats4meal.com" = "http://localhost:8080";
           "cockpit.whats4meal.com" = "http://localhost:9090";
