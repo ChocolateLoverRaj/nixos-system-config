@@ -9,7 +9,9 @@
     # The Framework ectool works well enough for Chromebooks
     # The ChromeOS ectool is not packaged
     fw-ectool
+    # For running the MrChromebox firmware utility script
     dmidecode
   ];
-  boot.kernelParams = ["iomem=relaxed"];
+  # For flashing firmware
+  boot.kernelParams = [ "iomem=relaxed" ];
 }

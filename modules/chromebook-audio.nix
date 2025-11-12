@@ -4,15 +4,15 @@ let
   chromebook-ucm-conf =
     with pkgs;
     alsa-ucm-conf.overrideAttrs {
-      wttsrc = fetchFromGitHub {
+      crosSrc = fetchFromGitHub {
         owner = "WeirdTreeThing";
         repo = "alsa-ucm-conf-cros";
-        rev = "00b399ed00930bfe544a34358547ab20652d71e3";
-        hash = "sha256-lRrgZDb3nnZ6/UcIsfjqAAbbSMOkP3lBGoGzZci+c1k=";
+        rev = "a4e92135fd49e669b5ce096439289e05e25ae90c";
+        hash = "sha256-3TpzjmWuOn8+eIdj0BUQk2TeAU7BzPBi3FxAmZ3zkN8=";
       };
       postInstall = ''
-        cp -R $wttsrc/ucm2/* $out/share/alsa/ucm2
-        cp -R $wttsrc/overrides/* $out/share/alsa/ucm2/conf.d
+        cp -R $crosSrc/ucm2/* $out/share/alsa/ucm2
+        cp -R $crosSrc/overrides/* $out/share/alsa/ucm2/conf.d
       '';
     };
 in
