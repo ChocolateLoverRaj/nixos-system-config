@@ -6,6 +6,7 @@
     # TODO: Only apply this if a machine is a server *and* a Chromebook
     ../modules/maintain-charge.nix
     ../modules/samba.nix
+    ../modules/zfs.nix
   ];
 
   services.cloudflare-dyndns = {
@@ -80,4 +81,5 @@
       USB_AUTOSUSPEND = 0;
     };
   };
+  services.rsyncd.enable = true;
 }

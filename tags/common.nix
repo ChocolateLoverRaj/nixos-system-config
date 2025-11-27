@@ -11,7 +11,7 @@
     ../modules/ssh-server.nix
     ../modules/ld.nix
     ../modules/unfree-packages.nix
-    ../modules/zfs.nix
+    # ../modules/zfs.nix
     ../modules/fonts.nix
     ../modules/gc.nix
     ../modules/ram-tmp.nix

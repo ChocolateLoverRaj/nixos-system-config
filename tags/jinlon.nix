@@ -70,4 +70,5 @@
   };
   # deep should save more memory than s2idle
   boot.kernelParams = [ "mem_sleep_default=deep" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
