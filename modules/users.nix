@@ -16,6 +16,7 @@
           "input"
           "diy_usb_device"
           "podman"
+          "i2c"
         ];
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZPbMdG1jP0ciTUXDxDhhyPDNKulsQ2zr6dt3EUeg/k Rajas Paranjpe (ChocolateLoverRaj)"
@@ -32,6 +33,7 @@
           "tty"
           "adbusers"
           "input"
+          "i2c"
         ];
       };
 
@@ -44,6 +46,7 @@
           "tty"
           "adbusers"
           "input"
+          "i2c"
         ];
       };
 
@@ -57,6 +60,7 @@
           "tty"
           "adbusers"
           "input"
+          "i2c"
         ];
       };
     };

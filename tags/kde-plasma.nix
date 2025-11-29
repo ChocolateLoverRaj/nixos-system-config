@@ -18,13 +18,15 @@
         };
       };
     };
+    # Enable changing the monitor's display brightness through the OS!
+    ddccontrol.enable = true;
   };
 
   environment = {
     systemPackages = with pkgs; [
       # Needed for KDE Plasma to fully function
       clinfo
-      glxinfo
+      mesa-demos
       vulkan-tools
       wayland-utils
       pciutils
