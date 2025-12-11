@@ -13,5 +13,8 @@
       "steam-unwrapped"
       "steamdeck-hw-theme"
       "munbyn-itpp941-cups"
+      "geekbench"
+      "nvidia-x11"
+      "nvidia-settings"
     ];
 }

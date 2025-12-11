@@ -44,19 +44,34 @@
             ./hosts/robo360/configuration.nix
           ];
         };
-        "installer" = nixpkgs.lib.nixosSystem {
+        "zephy" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/zephy/configuration.nix
+            nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
+          ];
+        };
+        "zephy-installer" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             (
-              { pkgs, modulesPath, ... }:
+              { modulesPath, ... }:
               {
                 imports = [
                   (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix")
+                  nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
                   ./tags/common.nix
                   ./tags/chromebook.nix
                   ./tags/asus.nix
                 ];
                 environment.etc.nixos-system-config.source = ./.;
+                # Options that get used by system.build.vm
+                virtualisation.vmVariant.virtualisation = {
+                  cores = 8;
+                  memorySize = 16384;
+                  # Don't persist any data
+                  diskImage = null;
+                };
               }
             )
           ];
