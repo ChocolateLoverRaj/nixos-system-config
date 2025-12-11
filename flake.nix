@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.3";
+      url = "github:nix-community/lanzaboote/v1.0.0";
 
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,6 +49,7 @@
           modules = [
             ./hosts/zephy/configuration.nix
             nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
+            lanzaboote.nixosModules.lanzaboote
           ];
         };
         "zephy-installer" = nixpkgs.lib.nixosSystem {
