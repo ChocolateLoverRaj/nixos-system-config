@@ -3,6 +3,7 @@
 {
   imports = [
     ./chromebook.nix
+    ./chromebook-fp.nix
   ];
   environment = {
     systemPackages = with pkgs; [

@@ -12,7 +12,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../tags/common.nix
-    ../../tags/chromebook.nix
     ../../tags/jinlon.nix
     ../../tags/development.nix
     ../../tags/gnome.nix

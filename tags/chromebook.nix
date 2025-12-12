@@ -3,7 +3,6 @@
 {
   imports = [
     ../modules/chromebook-audio.nix
-    ../modules/cros-fp.nix
   ];
   environment.systemPackages = with pkgs; [
     # The Framework ectool works well enough for Chromebooks

@@ -82,4 +82,9 @@
     };
   };
   services.rsyncd.enable = true;
+
+  # Ignore lid, so that a laptop's lid can be closed and the laptop
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+  };
 }
