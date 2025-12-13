@@ -51,8 +51,8 @@
             f11 = "nextsong";
             nextsong = "f11";
 
-            # Make copilot key instead put the computer to sleep
-            # "leftshift+leftmeta+f23" = "sleep";
+            # Remap the copilot key
+            "leftshift+leftmeta+f23" = "rightcontrol";
           };
           alt = {
             backspace = "delete";
