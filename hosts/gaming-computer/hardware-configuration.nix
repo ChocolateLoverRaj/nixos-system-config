@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -27,21 +26,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/7a121e5f-4480-433a-b7f1-b0d2202e2783";
+    device = "/dev/disk/by-uuid/8ded7c9b-95f6-4959-bccd-fddaa54c8fe2";
     fsType = "btrfs";
     options = [ "subvol=@" ];
   };
 
-  boot.initrd.luks.devices."luks-7f2db9fa-3af0-4a8a-bc69-b6dcf972fcf4" = {
-    device = "/dev/disk/by-uuid/7f2db9fa-3af0-4a8a-bc69-b6dcf972fcf4";
-    crypttabExtraOpts = [
-      "tpm2-device=auto"
-      "tpm2-measure-pcr=yes"
-    ];
+  boot.initrd.luks.devices."luks-a4c89347-08a3-4290-ac92-1704aae03a73" = {
+    device = "/dev/disk/by-uuid/a4c89347-08a3-4290-ac92-1704aae03a73";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/31F1-F947";
+    device = "/dev/disk/by-uuid/0587-7AA3";
     fsType = "vfat";
   };
 
