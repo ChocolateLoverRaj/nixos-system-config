@@ -48,7 +48,7 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/zephy/configuration.nix
-            nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
+            # nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
             lanzaboote.nixosModules.lanzaboote
           ];
         };

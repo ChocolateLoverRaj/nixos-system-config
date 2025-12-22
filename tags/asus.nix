@@ -5,6 +5,6 @@
       enable = true;
       enableUserService = true;
     };
-    supergfxd.enable = true;
+    supergfxd.enable = false;
   };
 }

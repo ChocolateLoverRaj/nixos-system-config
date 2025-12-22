@@ -7,6 +7,7 @@
   environment = {
     systemPackages = with pkgs; [
       keyd
+      ryzenadj
     ];
   };
   services.keyd = {
@@ -50,5 +51,63 @@
     };
   };
   # This might help, idk
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackagesFor (
+  #   pkgs.linux_6_18.override {
+  #     argsOverride = rec {
+  #       src = pkgs.fetchurl {
+  #         url = "https://git.kernel.org/torvalds/t/linux-${version}.tar.gz";
+  #         sha256 = "sha256-itUMYlX2BWUMmqeACu8ZaDMR/S2eBhDSIx1UZl9hh9E=";
+  #       };
+  #       version = "6.19-rc1";
+  #       modDirVersion = "6.19.0-rc1";
+  #     };
+  #   }
+  # );
+
+  hardware.cpu.amd.ryzen-smu.enable = true;
+
+  hardware.graphics.enable = true;
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    # Modesetting is required.
+    modesetting.enable = true;
+
+    powerManagement = {
+      # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+      # Enable this if you have graphical corruption issues or application crashes after waking
+      # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
+      # of just the bare essentials.
+      enable = true;
+
+      # Fine-grained power management. Turns off GPU when not in use.
+      # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+      finegrained = true;
+    };
+
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
+    # Only available from driver 515.43.04+
+    open = true;
+
+    # Enable the Nvidia settings menu,
+    # accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      amdgpuBusId = "PCI:65:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+
+      # I think this makes using a monitor through the HDMI port which is connected to the dGPU better
+      reverseSync.enable = true;
+    };
+  };
 }
