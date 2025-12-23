@@ -55,7 +55,7 @@
     };
   };
 
-  hardware.cpu.amd.ryzen-smu.enable = true;
+  # hardware.cpu.amd.ryzen-smu.enable = true;
   hardware.graphics.enable = true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -93,4 +93,5 @@
       reverseSync.enable = true;
     };
   };
+  boot.kernelParams = [ "iomem=relaxed" ];
 }
