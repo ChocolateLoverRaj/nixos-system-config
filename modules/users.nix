@@ -13,7 +13,6 @@
           "dialout"
           "tty"
           "adbusers"
-          "input"
           "diy_usb_device"
           "podman"
           "i2c"
@@ -33,7 +32,6 @@
           "dialout"
           "tty"
           "adbusers"
-          "input"
           "i2c"
         ];
       };
@@ -46,7 +44,6 @@
           "dialout"
           "tty"
           "adbusers"
-          "input"
           "i2c"
         ];
       };
@@ -60,7 +57,6 @@
           "dialout"
           "tty"
           "adbusers"
-          "input"
           "i2c"
         ];
       };
