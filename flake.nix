@@ -1,17 +1,18 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Use keyd <2.6.0, because 2.6.0 has an annoying bug
+    nixpkgsKeyd.url = "github:NixOS/nixpkgs/0fca36f4cf8f67dd8e1d7e37fa379d55c5150ca5";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
-
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
   outputs =
     {
       nixpkgs,
+      nixpkgsKeyd,
       lanzaboote,
       nixos-hardware,
       ...
@@ -46,36 +47,26 @@
         };
         "zephy" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [
-            ./hosts/zephy/configuration.nix
-            # nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
-            lanzaboote.nixosModules.lanzaboote
-          ];
-        };
-        "zephy-installer" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            (
-              { modulesPath, ... }:
+          modules =
+            let
+              system = "x86_64-linux";
+              pkgs-keyd = import nixpkgsKeyd {
+                inherit system;
+              };
+            in
+            [
               {
-                imports = [
-                  (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix")
-                  nixos-hardware.nixosModules.asus-zephyrus-ga402x-nvidia
-                  ./tags/common.nix
-                  ./tags/chromebook.nix
-                  ./tags/asus.nix
+                nixpkgs.overlays = [
+                  # Overlay: Use `self` and `super` to express
+                  # the inheritance relationship
+                  (self: super: {
+                    keyd = pkgs-keyd.keyd;
+                  })
                 ];
-                environment.etc.nixos-system-config.source = ./.;
-                # Options that get used by system.build.vm
-                virtualisation.vmVariant.virtualisation = {
-                  cores = 8;
-                  memorySize = 16384;
-                  # Don't persist any data
-                  diskImage = null;
-                };
               }
-            )
-          ];
+              ./hosts/zephy/configuration.nix
+              lanzaboote.nixosModules.lanzaboote
+            ];
         };
       };
     };

@@ -87,9 +87,8 @@
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "repo": "nixos-hardware",
-        "type": "github"
+        "id": "nixos-hardware",
+        "type": "indirect"
       }
     },
     "nixpkgs": {
@@ -105,6 +104,22 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgsKeyd": {
+      "locked": {
+        "lastModified": 1766742825,
+        "narHash": "sha256-tgRHKSefMdbOIXczpYo60DuKH9u6EuUxCvGRmKGbwvo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0fca36f4cf8f67dd8e1d7e37fa379d55c5150ca5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0fca36f4cf8f67dd8e1d7e37fa379d55c5150ca5",
         "type": "github"
       }
     },
@@ -135,7 +150,8 @@
       "inputs": {
         "lanzaboote": "lanzaboote",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgsKeyd": "nixpkgsKeyd"
       }
     },
     "rust-overlay": {
