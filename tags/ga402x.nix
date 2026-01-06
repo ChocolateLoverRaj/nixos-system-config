@@ -95,4 +95,6 @@
     };
   };
   boot.kernelParams = [ "iomem=relaxed" ];
+
+  networking.networkmanager.wifi.powersave = false;
 }
