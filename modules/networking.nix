@@ -24,4 +24,9 @@
     enable = true;
     useRoutingFeatures = "both";
   };
+  # Improve Wi-Fi
+  hardware.wirelessRegulatoryDatabase = true;
+  boot.extraModprobeConfig = ''
+    options cfg80211 ieee80211_regdom="US"
+  '';
 }
