@@ -8,6 +8,7 @@
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
   outputs =
     {
@@ -15,6 +16,7 @@
       nixpkgsKeyd,
       lanzaboote,
       nixos-hardware,
+      nix-cachyos-kernel,
       ...
     }:
     {
@@ -66,6 +68,9 @@
               }
               ./hosts/zephy/configuration.nix
               lanzaboote.nixosModules.lanzaboote
+              {
+                nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+              }
             ];
         };
       };

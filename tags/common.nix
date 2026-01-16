@@ -16,6 +16,7 @@
     ../modules/gc.nix
     ../modules/ram-tmp.nix
     ../modules/windows-keyboard.nix
+    ../modules/substituters.nix
   ];
 
   nix.settings.experimental-features = [

@@ -24,6 +24,8 @@
     enable = true;
     useRoutingFeatures = "both";
   };
+  # Required to fix tailscale causing DNS failures
+  services.resolved.enable = true;
   # Improve Wi-Fi
   hardware.wirelessRegulatoryDatabase = true;
   boot.extraModprobeConfig = ''

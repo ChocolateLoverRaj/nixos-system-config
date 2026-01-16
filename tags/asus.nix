@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   services = {
@@ -15,7 +15,4 @@
     # Lets you switch between iGPU only, hybrid, and dGPU only graphics
     supergfxd.enable = true;
   };
-
-  # Includes kernel patches needed for ROG Control Center to fully work
-  boot.kernelPackages = pkgs.callPackage ../modules/linux-g14.nix { };
 }

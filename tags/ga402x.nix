@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -114,4 +110,7 @@
       reverseSync.enable = true;
     };
   };
+
+  # Includes kernel patches needed for ROG Control Center to fully work
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 }
