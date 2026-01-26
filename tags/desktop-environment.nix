@@ -21,5 +21,9 @@
     # Good browser
     firefox
     tor-browser
+
+    # For libreoffice
+    hunspell
+    hunspellDicts.en_US-large
   ];
 }
