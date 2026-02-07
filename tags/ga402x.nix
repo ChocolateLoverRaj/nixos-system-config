@@ -21,7 +21,8 @@
       ];
       settings = {
         main = {
-          capslock = "leftmeta";
+          esc = "leftmeta";
+          capslock = "esc";
           meta = "leftalt";
 
           # Do something like fn-lock for some keys that I like
@@ -113,4 +114,15 @@
 
   # Includes kernel patches needed for ROG Control Center to fully work
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+
+  # services.udev.extraRules = ''
+  #   # Disable power auto-suspend for the ASUS N-KEY device, i.e. USB Keyboard.
+  #   # Otherwise on certain kernel-versions, it will tend to take 1-2 key-presses to wake-up after the device suspends.
+  #   ACTION=="add", SUBSYSTEM=="usb", TEST=="power/autosuspend", ATTR{idVendor}=="0b05", ATTR{idProduct}=="19b6", ATTR{power/autosuspend}="-1"
+
+  #   # Disable power wakeup for the 8295 ITE device.
+  #   # Otherwise on certain kernel-versions, it will tend to cause the laptop to immediately wake-up when suspending.
+  #   # ACTION=="add|change", SUBSYSTEM=="usb", DRIVER="usb", TEST="power/wakeup", ATTR{idVendor}=="0b05", ATTR{idProduct}=="193b", ATTR{power/wakeup}="disabled"
+  #   ACTION=="add|change", SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="193b", ATTR{power/wakeup}="disabled"
+  # '';
 }
