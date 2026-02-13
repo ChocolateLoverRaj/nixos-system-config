@@ -9,11 +9,14 @@
       settings = {
         General = {
           Country = "US";
-          RoamThreshold = -75;
+          RoamThreshold = 1;
           RoamThreshold5G = -80;
           RoamRetryInterval = 20;
           ControlPortOverNL80211 = false;
           EnableNetworkConfiguration = true;
+          BandModifier2_4GHz = 1.0;
+          BandModifier5GHz = 2.0;
+          BandModifier6GHz = 3.0;
         };
         Settings = {
           AutoConnect = true;
