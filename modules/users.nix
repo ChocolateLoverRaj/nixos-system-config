@@ -18,6 +18,7 @@
           "i2c"
           "plugdev"
           "libvirtd"
+          "gamers"
         ];
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJZPbMdG1jP0ciTUXDxDhhyPDNKulsQ2zr6dt3EUeg/k Rajas Paranjpe (ChocolateLoverRaj)"
@@ -34,6 +35,7 @@
           "tty"
           "adbusers"
           "i2c"
+          "gamers"
         ];
       };
 
@@ -66,6 +68,8 @@
     groups = {
       diy_usb_device = { };
       plugdev = { };
+      # Share Steam game library
+      gamers = { };
     };
   };
 }
