@@ -39,7 +39,6 @@
     home-manager
     # Miscellaneous commands
     lf
-    neofetch
     fastfetch
     bat
     usbutils

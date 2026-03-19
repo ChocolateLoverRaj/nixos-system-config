@@ -30,7 +30,8 @@
         ];
         settings = {
           main = {
-            capslock = "leftmeta";
+            escape = "leftmeta";
+            capslock = "esc";
             meta = "leftalt";
             # Make certain keys do actions by default instead of F#
             f6 = "mute";
