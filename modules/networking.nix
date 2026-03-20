@@ -12,6 +12,12 @@
           25565
           # Minecraft mod - simple voice chat
           24454
+          # DHCP Server
+          67
+          # DNS Server
+          53
+          # OS Development
+          8982
         ];
       in
       {
