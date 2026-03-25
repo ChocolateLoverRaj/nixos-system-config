@@ -18,6 +18,8 @@
           53
           # OS Development
           8982
+          # # TFTP Server
+          # 69
         ];
       in
       {
@@ -37,4 +39,11 @@
   boot.extraModprobeConfig = ''
     options cfg80211 ieee80211_regdom="US"
   '';
+
+  # environment.etc = {
+  #   "NetworkManager/dnsmasq-shared.d/tftp.conf".text = ''
+  #     log-dhcp
+  #     pxe-service=0,"Raspberry Pi Boot"
+  #   '';
+  # };
 }
