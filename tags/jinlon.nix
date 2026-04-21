@@ -39,6 +39,8 @@
         main = {
           sleep = "delete";
           zoom = "f11";
+          meta = "escape";
+          escape = "leftmeta";
         };
         meta = {
           back = "f1";
@@ -71,5 +73,4 @@
   };
   # deep should save more memory than s2idle
   boot.kernelParams = [ "mem_sleep_default=deep" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
