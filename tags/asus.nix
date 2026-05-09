@@ -11,6 +11,6 @@
       enable = true;
     };
     # Lets you switch between iGPU only, hybrid, and dGPU only graphics
-    supergfxd.enable = true;
+    # supergfxd.enable = true;
   };
 }
