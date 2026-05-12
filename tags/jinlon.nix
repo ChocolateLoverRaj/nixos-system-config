@@ -51,9 +51,9 @@
           sysrq = "f5";
           brightnessdown = "f6";
           brightnessup = "f7";
-          kbdillumtoggle = "f8";
-          playpause = "f9";
-          micmute = "f10";
+          kbdillumdown = "f8";
+          kbdillumup = "f9";
+          playpause = "f10";
           mute = "f11";
           volumedown = "f12";
           volumeup = "f13";
