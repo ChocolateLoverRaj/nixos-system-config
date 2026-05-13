@@ -4,7 +4,7 @@
   imports = [
     ./asus.nix
     # gmaing is fun with iwd, and not fun without iwd
-    # ../modules/iwd.nix
+    ../modules/iwd.nix
   ];
   environment = {
     systemPackages = with pkgs; [
