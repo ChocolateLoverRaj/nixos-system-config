@@ -4,7 +4,6 @@
   imports = [
     ../modules/sound.nix
     ../modules/flatpak.nix
-    ../modules/syncthing.nix
   ];
 
   # Useful apps to have on all systems with a desktop environment
