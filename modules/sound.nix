@@ -29,4 +29,10 @@
       resample.quality = 1;
     };
   };
+  # "Headset" profile on Bluetooth headphones sounds bad and is mono audio
+  services.pipewire.wireplumber.extraConfig."11-bluetooth-policy" = {
+    "wireplumber.settings" = {
+      "bluetooth.autoswitch-to-headset-profile" = false;
+    };
+  };
 }
