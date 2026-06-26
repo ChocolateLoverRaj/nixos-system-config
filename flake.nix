@@ -4,7 +4,7 @@
     # Use keyd <2.6.0, because 2.6.0 has an annoying bug
     nixpkgsKeyd.url = "github:NixOS/nixpkgs/0fca36f4cf8f67dd8e1d7e37fa379d55c5150ca5";
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
+      url = "github:nix-community/lanzaboote/v1.1.0";
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
