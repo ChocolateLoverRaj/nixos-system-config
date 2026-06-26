@@ -75,16 +75,11 @@
     };
 
   boot.zfs.extraPools = [ "para-z" ];
-  services.tlp = {
-    enable = true;
-    settings = {
-      USB_AUTOSUSPEND = 0;
-    };
-  };
   services.rsyncd.enable = true;
 
   # Ignore lid, so that a laptop's lid can be closed and the laptop
   services.logind.settings.Login = {
+    IdleAction = "ignore";
     HandleLidSwitch = "ignore";
   };
 }
