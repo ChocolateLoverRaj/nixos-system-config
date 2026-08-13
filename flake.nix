@@ -1,8 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # Use keyd <2.6.0, because 2.6.0 has an annoying bug
-    nixpkgsKeyd.url = "github:NixOS/nixpkgs/0fca36f4cf8f67dd8e1d7e37fa379d55c5150ca5";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.1.0";
       # Optional but recommended to limit the size of your system closure.
@@ -13,7 +11,6 @@
   outputs =
     {
       nixpkgs,
-      nixpkgsKeyd,
       lanzaboote,
       nixos-hardware,
       nix-cachyos-kernel,
@@ -49,29 +46,13 @@
         };
         "zephy" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules =
-            let
-              system = "x86_64-linux";
-              pkgs-keyd = import nixpkgsKeyd {
-                inherit system;
-              };
-            in
-            [
-              {
-                nixpkgs.overlays = [
-                  # Overlay: Use `self` and `super` to express
-                  # the inheritance relationship
-                  (self: super: {
-                    keyd = pkgs-keyd.keyd;
-                  })
-                ];
-              }
-              ./hosts/zephy/configuration.nix
-              lanzaboote.nixosModules.lanzaboote
-              {
-                nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
-              }
-            ];
+          modules = [
+            ./hosts/zephy/configuration.nix
+            lanzaboote.nixosModules.lanzaboote
+            {
+              nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+            }
+          ];
         };
       };
     };
