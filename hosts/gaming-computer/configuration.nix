@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   networking.hostName = "gaming-computer";
@@ -16,6 +16,7 @@
     ../../tags/tpm-secure-boot.nix
     ../../tags/kde-plasma.nix
     ../../tags/dedicated-gaming.nix
+    ../../tags/server.nix
   ];
 
   # This value determines the NixOS release from which the default

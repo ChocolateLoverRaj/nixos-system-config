@@ -3,8 +3,6 @@
 {
   imports = [
     ../modules/docker.nix
-    # TODO: Only apply this if a machine is a server *and* a Chromebook
-    ../modules/maintain-charge.nix
     ../modules/samba.nix
     ../modules/zfs.nix
   ];
@@ -74,7 +72,10 @@
       allowedUDPPorts = allowedPorts;
     };
 
-  boot.zfs.extraPools = [ "para-z" ];
+  boot.zfs = {
+    extraPools = [ "para-z" ];
+    forceImportRoot = false;
+  };
   services.rsyncd.enable = true;
 
   # Ignore lid, so that a laptop's lid can be closed and the laptop
@@ -82,4 +83,24 @@
     IdleAction = "ignore";
     HandleLidSwitch = "ignore";
   };
+  # Disable suspend
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "no";
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspendThenHibernate = "no";
+  };
+  # When the screen is off, but the computer is still on, a slight mouse movement just from touching the desk will turn on the screen.
+  # Disable turning on the screen when the mouse moves.
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     kdePackages = prev.kdePackages // {
+  #       plasma-desktop = prev.kdePackages.plasma-desktop.overrideAttrs (old: {
+  #         patches = (old.patches or [ ]) ++ [
+  #           ./mouse-deadzone.patch
+  #         ];
+  #       });
+  #     };
+  #   })
+  # ];
 }
