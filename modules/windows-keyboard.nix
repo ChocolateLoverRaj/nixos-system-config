@@ -51,9 +51,6 @@
 
             f11 = "nextsong";
             nextsong = "f11";
-
-            # Remap the copilot key
-            "leftshift+leftmeta+f23" = "rightcontrol";
           };
           alt = {
             backspace = "delete";

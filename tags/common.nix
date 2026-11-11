@@ -16,7 +16,6 @@
     ../modules/gc.nix
     ../modules/ram-tmp.nix
     ../modules/windows-keyboard.nix
-    ../modules/substituters.nix
   ];
 
   nix.settings.experimental-features = [
@@ -28,8 +27,6 @@
   environment.systemPackages = with pkgs; [
     # The terminal editor that I use
     nano
-    # Another nice terminal editor
-    msedit
     # Used by NixOS, and how I manage config
     git
     # Useful for downloading stuff

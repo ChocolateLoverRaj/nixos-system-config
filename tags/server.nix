@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   imports = [
@@ -73,9 +73,15 @@
     };
 
   boot.zfs = {
-    extraPools = [ "para-z" ];
+    extraPools = lib.mkIf (config.specialisation != {})  [ "para-z" ];
     forceImportRoot = false;
   };
+  specialisation = {
+    "without para-z" = {};
+  };
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="1058", ATTR{idProduct}=="25a2", ATTR{power/control}="on"
+  '';
   services.rsyncd.enable = true;
 
   # Ignore lid, so that a laptop's lid can be closed and the laptop
