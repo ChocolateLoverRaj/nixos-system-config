@@ -18,6 +18,7 @@
         "0b05:19b6:d167885d"
         "0b05:19b6:7a8b633b"
         "0b05:19b6:ef0c5324"
+        "0b05:19b6:fdafe8a7"
       ];
       settings = {
         main = {
@@ -49,7 +50,7 @@
           brightnessup = "f8";
 
           # Make the M4 key do play/pause
-          prog1 = "playpause";
+          scrolldown = "playpause";
         };
         alt = {
           backspace = "delete";
